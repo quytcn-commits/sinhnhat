@@ -1,19 +1,26 @@
 services:
-  poster:
+  app:
     build: .
     image: newway-poster:latest
-    container_name: newway-poster
-    ports:
-      - "3000:3000"
+    container_name: sinhnhat-app
+    restart: unless-stopped
     environment:
       - NODE_ENV=production
-      # Mật khẩu trang /admin — đặt trong file .env (mặc định newway2026 nếu không có)
+      # Mật khẩu trang /admin — đặt trong .env (mặc định newway2026 nếu thiếu)
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-newway2026}
       - DATA_PATH=/app/runtime-data/employees.json
+    ports:
+      # Bind 127.0.0.1 (chỉ localhost) — nginx host proxy vào. Port 3003:
+      # 3001=roadmap2026, 3002=giaitrinh -> sinhnhat dùng 3003.
+      - "127.0.0.1:3003:3000"
     volumes:
-      # Giữ data nhân sự đã upload qua /admin (bền qua các lần restart)
+      # Giữ data nhân sự đã upload qua /admin (bền qua restart/rebuild)
       - employees-data:/app/runtime-data
-    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 volumes:
   employees-data:

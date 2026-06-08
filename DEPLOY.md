@@ -1,103 +1,84 @@
-# Deploy lên VPS — domain `sinhnhat.newwayrealty.vn`
+# Deploy `sinhnhat.newwayrealty.vn` (cùng convention với giaitrinh)
 
-App chạy trong Docker (cổng 3000), Nginx reverse proxy + SSL Let's Encrypt cho domain.
+App Next.js chạy trong Docker, bind **`127.0.0.1:3003`**, nginx host proxy domain vào.
 
----
-
-## 0) DNS (làm trước, chờ vài phút cho phân giải)
-Vào trang quản lý DNS của `newwayrealty.vn`, thêm bản ghi:
-
-| Type | Name        | Value (IP VPS)   |
-|------|-------------|------------------|
-| A    | `sinhnhat`  | `<IP_VPS_CỦA_BẠN>` |
-
-Kiểm tra: `ping sinhnhat.newwayrealty.vn` ra đúng IP VPS là OK.
+> Quy ước port trên VPS: `3001`=roadmap2026, `3002`=giaitrinh, **`3003`=sinhnhat**.
+> Trước khi chạy, đảm bảo **3003 chưa bị chiếm** (xem mục Kiểm tra bên dưới).
 
 ---
 
-## 1) Cài Docker trên VPS (Ubuntu)
+## Cách nhanh — dùng `deploy.sh`
 ```bash
-curl -fsSL https://get.docker.com | sh
-sudo usermod -aG docker $USER && newgrp docker     # chạy docker không cần sudo
-docker --version && docker compose version
+# Lần đầu (repo private -> kèm token GitHub)
+cd /opt
+git clone https://<TOKEN>@github.com/quytcn-commits/sinhnhat.git sinhnhat
+cd sinhnhat
+nano .env            # nếu chưa có: cp .env.example .env ; đổi ADMIN_PASSWORD
+bash deploy.sh https://<TOKEN>@github.com/quytcn-commits/sinhnhat.git
 ```
+Script tự: pull/clone → tạo `.env` → `docker compose build && up -d` → cài nginx → kiểm tra.
 
-## 2) Lấy code về VPS
-Repo PRIVATE → tạo **Personal Access Token** (GitHub → Settings → Developer settings →
-Tokens, quyền `repo`) rồi:
+Cập nhật về sau: `cd /opt/sinhnhat && bash deploy.sh`
+
+---
+
+## Hoặc làm thủ công
+
+### 0) Kiểm tra port & nginx hiện trạng (quan trọng — VPS nhiều dự án)
+```bash
+docker ps --format "table {{.Names}}\t{{.Ports}}"          # xem port các container
+sudo ss -tlnp | grep -E ':80|:443|:3003'                   # 3003 phải TRỐNG; xem ai giữ 80/443
+ls /etc/nginx/sites-enabled/                               # các site nginx host đang có
+```
+Nếu `3003` đã bị chiếm → đổi sang port trống trong `docker-compose.yml` và `deploy/nginx-sinhnhat.conf`.
+
+### 1) Lấy code + cấu hình
 ```bash
 cd /opt
-git clone https://<TOKEN>@github.com/quytcn-commits/sinhnhat.git newway-poster
-cd newway-poster
+git clone https://<TOKEN>@github.com/quytcn-commits/sinhnhat.git sinhnhat
+cd sinhnhat
+cp .env.example .env && nano .env       # đổi ADMIN_PASSWORD mạnh
 ```
 
-## 3) Đặt mật khẩu admin
+### 2) Build + chạy container
 ```bash
-cp .env.example .env
-nano .env            # đổi ADMIN_PASSWORD=... thành mật khẩu mạnh
+docker compose build
+docker compose up -d
+docker compose ps
+curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:3003/    # 200 = OK
 ```
 
-## 4) Build & chạy container
+### 3) Nginx host
 ```bash
-docker compose up -d --build
-docker compose ps                 # thấy newway-poster Up, cổng 3000
-curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3000   # 200 là OK
-```
-> Data 1.022 nhân sự đã có sẵn trong image. Sau này cập nhật: vào `/admin` upload Excel,
-> hoặc `/admin/employees` sửa tay (data lưu ở volume, không mất khi restart/rebuild).
-
-## 5) Nginx reverse proxy
-```bash
-sudo apt update && sudo apt install -y nginx
-sudo cp deploy/nginx.conf /etc/nginx/sites-available/sinhnhat.newwayrealty.vn
-sudo ln -s /etc/nginx/sites-available/sinhnhat.newwayrealty.vn /etc/nginx/sites-enabled/
+sudo cp deploy/nginx-sinhnhat.conf /etc/nginx/sites-available/sinhnhat
+sudo ln -sf /etc/nginx/sites-available/sinhnhat /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
-Mở thử `http://sinhnhat.newwayrealty.vn` (chưa SSL) — thấy app là OK.
 
-## 6) SSL (HTTPS) miễn phí — Let's Encrypt
-```bash
-sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d sinhnhat.newwayrealty.vn
-# chọn redirect HTTP -> HTTPS khi được hỏi
-```
-Xong: **https://sinhnhat.newwayrealty.vn** chạy có khoá xanh. Certbot tự gia hạn.
+### 4) DNS + SSL (Cloudflare — giống giaitrinh)
+- Cloudflare: thêm bản ghi `sinhnhat` → IP VPS.
+  - **Proxied (cam):** SSL mode = **Full**. Xong, có HTTPS luôn.
+  - **DNS only (xám):** chạy `sudo certbot --nginx -d sinhnhat.newwayrealty.vn`.
+
+### 5) Truy cập
+- Nhân viên: **https://sinhnhat.newwayrealty.vn**
+- Admin: **/admin** (import Excel) · **/admin/employees** (sửa/xoá) — mật khẩu trong `.env`.
 
 ---
 
 ## Vận hành
-
-**Cập nhật code mới:**
 ```bash
-cd /opt/newway-poster
-git pull
-docker compose up -d --build
+cd /opt/sinhnhat
+docker compose logs -f app          # log
+docker compose restart app          # restart
+git pull && docker compose up -d --build   # cập nhật code (data ở volume KHÔNG mất)
 ```
-
-**Xem log / restart:**
-```bash
-docker compose logs -f --tail=100
-docker compose restart
-```
-
-**Cập nhật danh sách nhân sự:** vào `https://sinhnhat.newwayrealty.vn/admin`
-(mật khẩu trong `.env`) → upload file Excel, hoặc `/admin/employees` để sửa/xoá từng người.
-Data lưu ở Docker volume `employees-data` → **giữ nguyên** kể cả khi `git pull` + rebuild.
 
 **Backup data đã upload:**
 ```bash
-docker run --rm -v newway-poster_employees-data:/d -v $PWD:/b alpine \
-  sh -c "cp /d/employees.json /b/employees-backup.json"
+docker run --rm -v sinhnhat_employees-data:/d -v $PWD:/b alpine \
+  sh -c "cp /d/employees.json /b/employees-backup-$(date +%Y%m%d).json"
 ```
 
----
-
-## Phương án thay thế (đơn giản hơn, tự lo SSL): Caddy
-Nếu không muốn cấu hình Nginx + certbot, dùng Caddy (tự cấp SSL). Tạo `Caddyfile`:
-```
-sinhnhat.newwayrealty.vn {
-    reverse_proxy 127.0.0.1:3000
-    request_body { max_size 25MB }
-}
-```
-rồi `caddy run` (hoặc chạy Caddy bằng Docker). Caddy tự xin Let's Encrypt.
+> Data nhân sự lưu ở Docker volume `sinhnhat_employees-data` (qua `/admin`) → giữ nguyên kể cả
+> khi `git pull` + rebuild. Image cũng đã bundle sẵn 1.022 nhân sự làm mặc định.
