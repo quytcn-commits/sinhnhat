@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "SVN Cera";
+  src: url("/fonts/SVN-Cera.otf") format("opentype");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "SVN Cera";
+  src: url("/fonts/SVN-CeraMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: block;
+}
+@font-face {
+  /* Bộ SVN Cera này không có file Semibold riêng -> map 600 sang Bold */
+  font-family: "SVN Cera";
+  src: url("/fonts/SVN-CeraBold.otf") format("opentype");
+  font-weight: 600;
+  font-display: block;
+}
+@font-face {
+  font-family: "SVN Cera";
+  src: url("/fonts/SVN-CeraBold.otf") format("opentype");
+  font-weight: 700;
+  font-display: block;
+}
+
+@font-face {
+  /* Bahnschrift variable: trục wght 300–700, wdth 75–100 */
+  font-family: "Bahnschrift";
+  src: url("/fonts/Bahnschrift.woff") format("woff");
+  font-weight: 300 700;
+  font-stretch: 75% 100%;
+  font-display: block;
+}
+
+/* Bahnschrift SemiBold Condensed = wght 600, wdth 75 (đúng như PSB) */
+.bahn-sbc {
+  font-family: "Bahnschrift", sans-serif;
+  font-weight: 600;
+  font-stretch: 75%;
+  font-variation-settings: "wght" 600, "wdth" 75;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "SVN Cera", system-ui, sans-serif;
+  background: #0c3a24;
+  color: #14321f;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.brand {
+  text-align: center;
+  color: #d6f5e0;
+  margin-bottom: 18px;
+}
+.brand h1 { font-size: 22px; margin: 0; letter-spacing: 1px; }
+.brand p { font-size: 13px; opacity: 0.8; margin: 6px 0 0; }
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+label { font-weight: 500; font-size: 14px; display: block; margin-bottom: 8px; }
+
+input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 17px;
+  border: 1.5px solid #cdddd2;
+  border-radius: 12px;
+  outline: none;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+input[type="text"]:focus { border-color: #1f9b46; }
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2db64f, #0c7a2c);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 14px;
+}
+.btn:disabled { opacity: 0.6; cursor: default; }
+.btn.secondary { background: #eaf4ec; color: #0c7a2c; }
+.btn.ghost { background: none; color: #d6f5e0; border: 1px solid #ffffff55; }
+
+.error { color: #c62828; font-size: 14px; margin-top: 10px; }
+.hint { font-size: 12.5px; color: #6b8378; margin-top: 8px; }
+
+.uploadbox {
+  border: 1.5px dashed #b6cdbe;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  color: #38614b;
+}
+.uploadbox.has { border-style: solid; }
+
+.row { display: flex; gap: 10px; }
+.row .btn { margin-top: 0; }
+
+.info-line { font-size: 14px; color: #2c4a39; margin: 4px 0; }
+.info-line b { color: #0c7a2c; }
+
+/* ===== Admin danh sách nhân viên ===== */
+.wrap-wide { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+.admin-nav { display: flex; gap: 8px; margin-bottom: 14px; }
+.admin-nav a {
+  flex: 1; text-align: center; padding: 10px; border-radius: 10px; text-decoration: none;
+  font-weight: 600; font-size: 14px; background: #ffffff22; color: #d6f5e0; border: 1px solid #ffffff33;
+}
+.admin-nav a.active { background: #fff; color: #0c7a2c; }
+.emp { border: 1px solid #e2ece5; border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.emp .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.emp .name { font-weight: 700; color: #0c5a2e; font-size: 15px; }
+.emp .cccd { font-size: 12px; color: #6b8378; font-family: monospace; }
+.emp .meta { font-size: 13px; color: #46614f; margin-top: 4px; }
+.emp .meta b { color: #0c7a2c; }
+.emp .acts { margin-top: 8px; display: flex; gap: 8px; }
+.btn-sm {
+  padding: 7px 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13px;
+  cursor: pointer; font-family: inherit;
+}
+.btn-edit { background: #eaf4ec; color: #0c7a2c; }
+.btn-del { background: #fdeaea; color: #c62828; }
+.pager { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 12px; color: #2c4a39; font-size: 14px; }
+.pager button { padding: 8px 14px; border-radius: 8px; border: 1px solid #cdddd2; background: #fff; cursor: pointer; font-family: inherit; }
+.pager button:disabled { opacity: .5; cursor: default; }
+.modal-bg {
+  position: fixed; inset: 0; background: #0008; display: flex; align-items: flex-start;
+  justify-content: center; padding: 24px 14px; overflow: auto; z-index: 50;
+}
+.modal { background: #fff; border-radius: 16px; padding: 20px; width: 100%; max-width: 460px; }
+.modal h3 { margin: 0 0 12px; color: #0c5a2e; }
+.modal label { margin-top: 10px; }
+.row2 { display: flex; gap: 10px; }
+.row2 > div { flex: 1; }
+
+/* ===== Poster (kích thước thật 1449 x 2048, scale theo container) ===== */
+.poster-shell { width: 100%; }
+.poster-scale {
+  position: relative;
+  width: 100%;
+  /* tỉ lệ 1449:2048 */
+  aspect-ratio: 1449 / 2048;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1449px;
+  height: 2048px;
+  transform-origin: top left;
+  background-image: url("/poster-bg.png");
+  background-size: 1449px 2048px;
+}
+.ov { position: absolute; }
+.ov-text {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #00432b;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.photo-clip {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.photo-clip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Chữ xanh có gradient bóng nhẹ (sáng đỉnh -> đậm đáy) — khớp bản gốc */
+.g-green {
+  background: linear-gradient(180deg, #2ba350 0%, #0b6e34 52%, #023f18 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.big-num {
+  font-family: "SVN Cera", sans-serif;
+  font-weight: 700;
+  font-size: 210px;
+  line-height: 1;
+  letter-spacing: -1px;
+  /* LỚP FILL — gradient overlay trích trực tiếp từ layer-style PSB (linear, góc -115° = CSS 204°) */
+  background: linear-gradient(
+    204deg,
+    #15531c 0%,
+    #2a8835 11%,
+    #7abe7e 26%,
+    #3d9940 35%,
+    #4ca952 50%,
+    #7abe7e 60%,
+    #185a1e 71%,
+    #6ed077 82%,
+    #3b9541 92%,
+    #348838 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* LỚP OUTER GLOW trắng (#FFF 73%, size 7) + LỚP DROP SHADOW xanh (#2D561A 32%, góc 90°, size 12) */
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.73))
+    drop-shadow(0 6px 12px rgba(45, 86, 26, 0.32));
+}

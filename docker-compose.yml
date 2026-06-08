@@ -1,0 +1,19 @@
+services:
+  poster:
+    build: .
+    image: newway-poster:latest
+    container_name: newway-poster
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Đổi mật khẩu trang admin (/admin) tại đây:
+      - ADMIN_PASSWORD=newway2026
+      - DATA_PATH=/app/runtime-data/employees.json
+    volumes:
+      # Giữ data nhân sự đã upload qua trang /admin (bền qua các lần restart)
+      - employees-data:/app/runtime-data
+    restart: unless-stopped
+
+volumes:
+  employees-data:

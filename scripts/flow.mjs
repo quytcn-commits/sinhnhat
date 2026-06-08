@@ -1,0 +1,16 @@
+import puppeteer from "puppeteer-core";
+const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
+const p = await b.newPage();
+await p.setViewport({ width: 520, height: 1200, deviceScaleFactor: 2 });
+p.on("pageerror", (e) => console.log("ERR:", e.message));
+await p.goto("http://localhost:3000/", { waitUntil: "networkidle0" });
+await p.type("#cccd", "001190012345");
+await p.click("button.btn");
+await p.waitForSelector(".poster", { timeout: 15000 });
+const inp = await p.$("input[type=file]");
+await inp.uploadFile("d:/company/event/public/sample-photo.jpg");
+await new Promise((r) => setTimeout(r, 1500));
+await p.screenshot({ path: "_flow.png", fullPage: true });
+console.log("OK flow");
+await b.close();

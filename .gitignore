@@ -1,0 +1,30 @@
+# Dependencies & build
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Data runtime (upload qua /admin, lưu ở volume) — KHÔNG commit
+runtime-data/
+
+# File nguồn NẶNG / NHẠY CẢM — không commit (lấy riêng khi cần regenerate)
+*.xlsx
+*.xls
+*.psb
+*.rar
+/1FTV-Photograph-Signature.otf
+/Bahnschrift.woff
+
+# Temp / QA
+_*.png
+_*.log
+_fonts
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env*.local
