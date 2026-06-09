@@ -137,7 +137,18 @@ input[type="text"]:focus { border-color: #1f9b46; }
     #000e00 100%
   );
 }
-/* Ảnh nền (rays/skyline) phủ toàn màn, GIỮ TỈ LỆ (không kéo giãn line), neo đáy-giữa */
+/* KHUNG SÂN KHẤU 1440×800 cố định — JS set transform: scale() phủ kín màn (cover).
+   Mọi thành phần (nền/chữ/card/cube) nằm trong khung → scale ĐỒNG ĐỀU, luôn = design. */
+.login-stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1440px;
+  height: 800px;
+  transform-origin: center center;
+  /* transform set inline từ React: translate(-50%,-50%) scale(N) */
+}
+/* Ảnh nền (rays/skyline + cube trái) lấp đầy khung 1440×800 */
 .login-bg {
   position: absolute;
   inset: 0;
@@ -145,17 +156,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
   pointer-events: none;
   overflow: hidden;
 }
-/* FIT THEO CHIỀU CAO (không zoom theo bề ngang) — giữ rays/cube đúng tỉ lệ
-   design ở mọi màn. Màn rộng hơn 16:9: hai bên là gradient (mép nền đã fade).
-   Màn hẹp hơn: tràn ngang & cắt nhẹ hai bên (vẫn phủ kín). */
 .login-bg img {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: none;
+  object-fit: cover;
   display: block;
 }
 /* Cụm đáy mobile (rays + skyline + 2 cube) — chỉ hiện ở mobile */
@@ -179,8 +183,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
   top: 0;
   transform: translateX(-50%);
   width: 540px;
-  max-width: 94vw;
-  padding-top: clamp(40px, 12.9vh, 110px);
+  padding-top: 103px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,6 +302,11 @@ input[type="text"]:focus { border-color: #1f9b46; }
 }
 /* Mobile */
 @media (max-width: 760px) {
+  /* Mobile KHÔNG dùng khung scale — stage tan biến, con về làm con trực tiếp .login */
+  .login-stage {
+    display: contents;
+    transform: none !important;
+  }
   /* Mobile dùng cụm đáy trích từ design (bg-mobile) thay cho bg PC + cube rời */
   .login-bg { display: none; }
   .login-bgm {

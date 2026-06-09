@@ -25,6 +25,21 @@ export default function Home() {
   // callback ổn định để không khiến BigNumber vẽ lại mỗi lần parent render
   const handleNumberReady = useCallback(() => setPosterReady(true), []);
 
+  // Scale khung login 1440×800 phủ kín màn (cover) — giữ đúng tỉ lệ design.
+  // Tính ngay khi hydrate (window có sẵn) để không nháy, cập nhật theo resize.
+  const [loginScale, setLoginScale] = useState(() =>
+    typeof window === "undefined"
+      ? 1
+      : Math.max(window.innerWidth / 1440, window.innerHeight / 800)
+  );
+  useEffect(() => {
+    const fit = () =>
+      setLoginScale(Math.max(window.innerWidth / 1440, window.innerHeight / 800));
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+
   const posterRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -122,14 +137,19 @@ export default function Home() {
   if (!info) {
     return (
       <div className="login">
-        <div className="login-bg">
-          <img src="/login/bg.png" alt="" />
-        </div>
-        {/* Cụm đáy riêng cho mobile (rays + skyline + 2 cube) — trích từ design */}
-        <img className="login-bgm" src="/login/bg-mobile.png" alt="" />
-        <img className="login-cube" src="/login/cube.png" alt="" />
+        {/* Khung 1440×800 cố định — scale đồng đều (cover) để LUÔN giống design
+            ở mọi tỉ lệ màn. Nền + chữ + card + cube nằm chung, không lệch nhau. */}
+        <div
+          className="login-stage"
+          style={{ transform: `translate(-50%, -50%) scale(${loginScale})` }}
+          suppressHydrationWarning
+        >
+          <div className="login-bg">
+            <img src="/login/bg.png" alt="" />
+          </div>
+          <img className="login-cube" src="/login/cube.png" alt="" />
 
-        <div className="login-content">
+          <div className="login-content">
           <div className="login-logo">
             <img className="mark" src="/login/logo-mark.png" alt="" />
             <img className="txt" src="/login/logo-text.png" alt="NewWay Realty" />
@@ -169,7 +189,10 @@ export default function Home() {
             </button>
             {error && <div className="login-error">{error}</div>}
           </form>
+          </div>
         </div>
+        {/* Cụm đáy riêng cho mobile (rays + skyline + 2 cube) — ngoài stage */}
+        <img className="login-bgm" src="/login/bg-mobile.png" alt="" />
       </div>
     );
   }
