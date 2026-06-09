@@ -322,9 +322,11 @@ input[type="text"]:focus { border-color: #1f9b46; }
     z-index: 0;
     pointer-events: none;
   }
+  /* Cột nội dung = 303/390 ≈ 77.7% (theo design: FIGHT + sub + card cùng cột) */
   .login-content {
-    width: 92vw;
-    padding-top: 34px;
+    width: 77.7vw;
+    /* đẩy khối content xuống để card top ≈ 300px như design */
+    padding-top: 113px;
   }
   .login-logo {
     height: 48px;
@@ -332,23 +334,25 @@ input[type="text"]:focus { border-color: #1f9b46; }
   }
   .login-logo .mark { height: 42px; }
   .login-logo .txt { height: 13px; }
-  /* Theo tỉ lệ design mobile (390px): FIGHT rộng 77%, hàng sub canh theo FIGHT */
+  /* FIGHT + sub lấp đầy cột (= card 303px) */
   .login-fight {
-    width: 77%;
+    width: 100%;
   }
   .login-sub {
-    width: 78%;
+    width: 100%;
     margin: 7px 0 26px;
   }
   .login-badge { height: 40px; }
   /* tagline mobile: rộng ~81/390 ≈ 21% → font ~10px, line-height 1.44 (kế thừa) */
   .login-tagline { font-size: 10px; }
+  /* Card mobile theo Figma: 303px, padding 32/16, gap 16, border 1px */
   .login-card {
-    padding: 18px;
-    gap: 13px;
+    padding: 32px 16px;
+    gap: 16px;
+    border-width: 1px;
   }
   .login-cardlabel {
-    font-size: 13px;
+    font-size: 12px;
   }
   .login-field {
     height: 52px;
