@@ -125,6 +125,8 @@ export default function Home() {
         <div className="login-bg">
           <img src="/login/bg.png" alt="" />
         </div>
+        {/* Cụm đáy riêng cho mobile (rays + skyline + 2 cube) — trích từ design */}
+        <img className="login-bgm" src="/login/bg-mobile.png" alt="" />
         <img className="login-cube" src="/login/cube.png" alt="" />
 
         <div className="login-content">

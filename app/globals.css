@@ -151,6 +151,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
   object-position: center bottom;
   display: block;
 }
+/* Cụm đáy mobile (rays + skyline + 2 cube) — chỉ hiện ở mobile */
+.login-bgm {
+  display: none;
+}
 /* Cube phải + phản chiếu (top 497/800, left 1062/1440, rộng 203/1440) */
 .login-cube {
   position: absolute;
@@ -288,8 +292,18 @@ input[type="text"]:focus { border-color: #1f9b46; }
 }
 /* Mobile */
 @media (max-width: 760px) {
-  .login-bg {
-    min-width: 760px;
+  /* Mobile dùng cụm đáy trích từ design (bg-mobile) thay cho bg PC + cube rời */
+  .login-bg { display: none; }
+  .login-bgm {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
   }
   .login-content {
     width: 92vw;
@@ -326,14 +340,8 @@ input[type="text"]:focus { border-color: #1f9b46; }
   .login-btn {
     height: 52px;
   }
-  .login-cube {
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 42%;
-    max-width: 180px;
-  }
+  /* Cube rời ẩn trên mobile — đã có trong bg-mobile */
+  .login-cube { display: none; }
 }
 
 /* ===== Admin danh sách nhân viên ===== */
