@@ -221,7 +221,8 @@ input[type="text"]:focus { border-color: #1f9b46; }
   color: #fff;
   font-weight: 600;
   font-size: 16px;
-  line-height: 115%;
+  /* baseline-to-baseline 23px / 16px = 1.44 (đo từ design) */
+  line-height: 1.44;
   letter-spacing: 0.005em;
   text-align: right;
 }
@@ -331,15 +332,17 @@ input[type="text"]:focus { border-color: #1f9b46; }
   }
   .login-logo .mark { height: 42px; }
   .login-logo .txt { height: 13px; }
+  /* Theo tỉ lệ design mobile (390px): FIGHT rộng 77%, hàng sub canh theo FIGHT */
   .login-fight {
-    width: 92%;
+    width: 77%;
   }
   .login-sub {
-    width: 96%;
-    margin: 6px 0 26px;
+    width: 78%;
+    margin: 7px 0 26px;
   }
-  .login-badge { height: 34px; }
-  .login-tagline { font-size: 13px; }
+  .login-badge { height: 40px; }
+  /* tagline mobile: rộng ~81/390 ≈ 21% → font ~10px, line-height 1.44 (kế thừa) */
+  .login-tagline { font-size: 10px; }
   .login-card {
     padding: 18px;
     gap: 13px;
