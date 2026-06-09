@@ -1,8 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { toPng } from "html-to-image";
 import Poster, { type PosterData } from "@/components/Poster";
+
+// Chạy trước khi browser vẽ trên client (tránh nháy); fallback useEffect khi SSR.
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 type LookupResult = Omit<PosterData, "photoUrl">;
 
@@ -25,14 +28,11 @@ export default function Home() {
   // callback ổn định để không khiến BigNumber vẽ lại mỗi lần parent render
   const handleNumberReady = useCallback(() => setPosterReady(true), []);
 
-  // Scale khung login 1440×800 phủ kín màn (cover) — giữ đúng tỉ lệ design.
-  // Tính ngay khi hydrate (window có sẵn) để không nháy, cập nhật theo resize.
-  const [loginScale, setLoginScale] = useState(() =>
-    typeof window === "undefined"
-      ? 1
-      : Math.max(window.innerWidth / 1440, window.innerHeight / 800)
-  );
-  useEffect(() => {
+  // Scale khung login 1440×800 phủ kín màn (cover) — giữ đúng tỉ lệ design ở
+  // mọi độ phân giải (HD/Full HD/2K/4K). Khởi tạo 1 (khớp SSR, không mismatch),
+  // set giá trị thật trong layout-effect (trước khi vẽ → không nháy, không kẹt).
+  const [loginScale, setLoginScale] = useState(1);
+  useIsoLayoutEffect(() => {
     const fit = () =>
       setLoginScale(Math.max(window.innerWidth / 1440, window.innerHeight / 800));
     fit();
@@ -142,7 +142,6 @@ export default function Home() {
         <div
           className="login-stage"
           style={{ transform: `translate(-50%, -50%) scale(${loginScale})` }}
-          suppressHydrationWarning
         >
           <div className="login-bg">
             <img src="/login/bg.png" alt="" />
