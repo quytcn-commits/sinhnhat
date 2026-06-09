@@ -26,3 +26,4 @@ _*.log
 
 # data runtime (dùng volume, không build vào image)
 runtime-data
+design

@@ -122,6 +122,184 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .info-line { font-size: 14px; color: #2c4a39; margin: 4px 0; }
 .info-line b { color: #0c7a2c; }
 
+/* ===== Trang login (thiết kế mới) ===== */
+.login {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(120% 85% at 50% 28%, #0e4f29 0%, #083c1e 58%, #052c16 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login-bg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1100px;
+  pointer-events: none;
+  z-index: 0;
+}
+.login-bg img {
+  width: 100%;
+  display: block;
+}
+.login-cube {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 30px #02160b88);
+}
+.login-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 560px;
+  padding: clamp(28px, 6vh, 64px) 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+.login-logo .mark {
+  height: 36px;
+}
+.login-logo .txt {
+  height: 14px;
+}
+.login-fight {
+  width: min(460px, 86%);
+  height: auto;
+}
+.login-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(460px, 86%);
+  margin: 16px 0 28px;
+}
+.login-badge {
+  height: 40px;
+}
+.login-tagline {
+  height: 42px;
+}
+.login-card {
+  width: 100%;
+  max-width: 474px;
+  background: rgba(7, 52, 26, 0.5);
+  border: 1px solid rgba(78, 200, 120, 0.28);
+  border-radius: 16px;
+  padding: 22px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 50px #02160b66;
+}
+.login-cardlabel {
+  color: #e7fbef;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.login-cardlabel b {
+  color: #57e389;
+  font-weight: 700;
+}
+.login-field {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #042a11;
+  border: 1px solid rgba(78, 200, 120, 0.22);
+  border-radius: 12px;
+  padding: 0 15px;
+  height: 56px;
+}
+.login-field svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: #cdeed8;
+}
+.login-field input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+.login-field input::placeholder {
+  color: #6f9a80;
+}
+.login-btn {
+  width: 100%;
+  margin-top: 14px;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #34d65a, #0e9a33);
+  color: #043016;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 22px #0a6b2a55;
+}
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.login-error {
+  color: #ff9a9a;
+  font-size: 13.5px;
+  margin-top: 10px;
+}
+/* PC: cube ở phải-dưới */
+.login-cube {
+  right: max(2vw, 10px);
+  bottom: 0;
+  width: clamp(150px, 18vw, 240px);
+}
+@media (max-width: 760px) {
+  .login-bg {
+    min-width: 760px;
+  }
+  .login-fight {
+    width: 88%;
+  }
+  .login-sub {
+    width: 88%;
+    margin: 12px 0 22px;
+  }
+  .login-badge {
+    height: 34px;
+  }
+  .login-tagline {
+    height: 36px;
+  }
+  .login-cube {
+    right: 50%;
+    transform: translateX(50%);
+    width: 150px;
+    opacity: 0.9;
+  }
+  .login-content {
+    padding-top: 30px;
+  }
+}
+
 /* ===== Admin danh sách nhân viên ===== */
 .wrap-wide { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
 .admin-nav { display: flex; gap: 8px; margin-bottom: 14px; }

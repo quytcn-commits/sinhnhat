@@ -119,6 +119,56 @@ export default function Home() {
     setError(null);
   }
 
+  if (!info) {
+    return (
+      <div className="login">
+        <div className="login-bg">
+          <img src="/login/bg.png" alt="" />
+        </div>
+        <img className="login-cube" src="/login/cube.png" alt="" />
+
+        <div className="login-content">
+          <div className="login-logo">
+            <img className="mark" src="/login/logo-mark.png" alt="" />
+            <img className="txt" src="/login/logo-text.png" alt="NewWay Realty" />
+          </div>
+
+          <img className="login-fight" src="/login/fight.png" alt="Fight For Five" />
+
+          <div className="login-sub">
+            <img className="login-badge" src="/login/badge.png" alt="5 Năm Khát Vọng" />
+            <img className="login-tagline" src="/login/tagline.png" alt="Vững vàng vị thế dẫn đầu" />
+          </div>
+
+          <form className="login-card" onSubmit={lookup}>
+            <div className="login-cardlabel">
+              <b>*</b>Nhập đúng số CCCD đã đăng ký với công ty
+            </div>
+            <div className="login-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6" strokeLinecap="round" />
+              </svg>
+              <input
+                id="cccd"
+                type="text"
+                inputMode="numeric"
+                placeholder="Nhập số CCCD của bạn"
+                value={cccd}
+                onChange={(e) => setCccd(e.target.value)}
+                autoComplete="off"
+              />
+            </div>
+            <button className="login-btn" type="submit" disabled={loading || !cccd.trim()}>
+              {loading ? "ĐANG TRA CỨU…" : "TẠO POSTER"}
+            </button>
+            {error && <div className="login-error">{error}</div>}
+          </form>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="wrap">
       <div className="brand">
@@ -126,25 +176,7 @@ export default function Home() {
         <p>Tri ân hành trình đồng hành — Fight For Five</p>
       </div>
 
-      {!info ? (
-        <form className="card" onSubmit={lookup}>
-          <label htmlFor="cccd">Nhập số CCCD của bạn</label>
-          <input
-            id="cccd"
-            type="text"
-            inputMode="numeric"
-            placeholder="VD: 001190012345"
-            value={cccd}
-            onChange={(e) => setCccd(e.target.value)}
-            autoComplete="off"
-          />
-          <button className="btn" type="submit" disabled={loading || !cccd.trim()}>
-            {loading ? "Đang tra cứu…" : "Tạo poster của tôi"}
-          </button>
-          {error && <div className="error">{error}</div>}
-          <div className="hint">Nhập đúng số CCCD đã đăng ký với công ty để lấy thông tin nhân sự.</div>
-        </form>
-      ) : (
+      {info && (
         <div className="card">
           <div className="info-line">
             Xin chào <b>{info.fullName}</b> — {info.title}
