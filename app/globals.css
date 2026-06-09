@@ -188,14 +188,16 @@ input[type="text"]:focus { border-color: #1f9b46; }
   height: 12px;
 }
 .login-fight {
-  width: min(512px, 86%);
+  width: 512px;
+  max-width: 96%;
   height: auto;
 }
 .login-sub {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(512px, 90%);
+  width: 512px;
+  max-width: 96%;
   margin: 8px 0 44px;
 }
 .login-badge {
