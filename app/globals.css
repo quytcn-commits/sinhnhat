@@ -307,17 +307,18 @@ input[type="text"]:focus { border-color: #1f9b46; }
     display: contents;
     transform: none !important;
   }
-  /* Mobile dùng cụm đáy trích từ design (bg-mobile) thay cho bg PC + cube rời */
+  /* Mobile: dùng NGUYÊN nền mobile dựng từ design (gradient sáng giữa +
+     skyline + rays + 2 cube) phủ toàn màn — thay cho bg PC + cube rời */
   .login-bg { display: none; }
   .login-bgm {
     display: block;
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     width: 100%;
-    height: auto;
-    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    z-index: 0;
     pointer-events: none;
   }
   .login-content {
