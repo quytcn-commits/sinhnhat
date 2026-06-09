@@ -137,19 +137,18 @@ input[type="text"]:focus { border-color: #1f9b46; }
     #000e00 100%
   );
 }
-/* Ảnh nền (rays/skyline) phủ toàn màn, neo đáy-giữa */
+/* Ảnh nền (rays/skyline) phủ toàn màn, GIỮ TỈ LỆ (không kéo giãn line), neo đáy-giữa */
 .login-bg {
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  min-width: 1200px;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
 }
 .login-bg img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
   display: block;
 }
 /* Cube phải + phản chiếu (top 497/800, left 1062/1440, rộng 203/1440) */
