@@ -162,7 +162,7 @@ export default function Home() {
                 autoComplete="off"
               />
             </div>
-            <button className="login-btn" type="submit" disabled={loading || !cccd.trim()}>
+            <button className="login-btn" type="submit" disabled={loading}>
               {loading ? "ĐANG TRA CỨU…" : "TẠO POSTER"}
             </button>
             {error && <div className="login-error">{error}</div>}
