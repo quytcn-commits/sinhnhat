@@ -176,17 +176,17 @@ input[type="text"]:focus { border-color: #1f9b46; }
   align-items: center;
 }
 .login-logo {
-  height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 27px;
 }
 .login-logo .mark {
-  height: 52px;
+  height: 44px;
 }
 .login-logo .txt {
-  height: 16px;
+  height: 12px;
 }
 .login-fight {
   width: min(512px, 86%);
@@ -219,9 +219,13 @@ input[type="text"]:focus { border-color: #1f9b46; }
   flex-direction: column;
   gap: 16px;
   padding: 32px;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 60px rgba(64, 197, 95, 0.3);
   border-radius: 16px;
+  /* viền 2px gradient xanh #59D06E (Figma) + nền đen 30% */
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) padding-box,
+    linear-gradient(150deg, #59d06e 0%, rgba(89, 208, 110, 0.5) 18%, rgba(89, 208, 110, 0.12) 45%, rgba(89, 208, 110, 0.45) 100%) border-box;
+  box-shadow: 0 4px 60px rgba(64, 197, 95, 0.3);
 }
 .login-cardlabel {
   color: #64c686;
