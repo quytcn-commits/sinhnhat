@@ -143,12 +143,19 @@ input[type="text"]:focus { border-color: #1f9b46; }
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
+/* FIT THEO CHIỀU CAO (không zoom theo bề ngang) — giữ rays/cube đúng tỉ lệ
+   design ở mọi màn. Màn rộng hơn 16:9: hai bên là gradient (mép nền đã fade).
+   Màn hẹp hơn: tràn ngang & cắt nhẹ hai bên (vẫn phủ kín). */
 .login-bg img {
-  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
   height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+  width: auto;
+  max-width: none;
   display: block;
 }
 /* Cụm đáy mobile (rays + skyline + 2 cube) — chỉ hiện ở mobile */
