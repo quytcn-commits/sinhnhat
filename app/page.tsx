@@ -137,7 +137,11 @@ export default function Home() {
 
           <div className="login-sub">
             <img className="login-badge" src="/login/badge.png" alt="5 Năm Khát Vọng" />
-            <img className="login-tagline" src="/login/tagline.png" alt="Vững vàng vị thế dẫn đầu" />
+            <div className="login-tagline">
+              VỮNG VÀNG
+              <br />
+              VỊ THẾ DẪN ĐẦU
+            </div>
           </div>
 
           <form className="login-card" onSubmit={lookup}>
@@ -145,9 +149,8 @@ export default function Home() {
               <b>*</b>Nhập đúng số CCCD đã đăng ký với công ty
             </div>
             <div className="login-field">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6" strokeLinecap="round" />
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4.2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2zm0 13.4a7.4 7.4 0 0 1-5.66-2.62c.05-1.92 3.78-2.98 5.66-2.98 1.87 0 5.6 1.06 5.66 2.98A7.4 7.4 0 0 1 12 19.6z" />
               </svg>
               <input
                 id="cccd"
