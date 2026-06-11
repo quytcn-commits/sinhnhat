@@ -656,15 +656,16 @@ input[type="text"]:focus { border-color: #1f9b46; }
     width: 100%;
     margin: 0;
   }
-  /* Cube mobile: đỉnh ngang badge KHÁT VỌNG (~54% poster), đè + cắt mép phải, đứng trước */
+  /* Cube mobile NHỎ như design: nằm góc phải dưới, đỉnh ~78% poster (ngang quote,
+     không che stats), cắt mép phải, đứng trước */
   .up-cube {
     display: block;
     position: absolute;
     left: auto;
-    right: -16%;
+    right: -8%;
     bottom: -9%;
-    width: 74%;
-    filter: drop-shadow(-13px -5px 22px rgba(3, 33, 15, 0.25));
+    width: 42%;
+    filter: drop-shadow(-9px -3px 16px rgba(3, 33, 15, 0.25));
   }
   /* Bóng gương phản chiếu ngay dưới chân poster (như design) */
   .up-shadow {
