@@ -542,6 +542,16 @@ input[type="text"]:focus { border-color: #1f9b46; }
   width: 175px;
   pointer-events: none;
 }
+/* Bóng gương phản chiếu chân poster — canh tâm poster (x965), ngay dưới đáy (y738) */
+.up-shadow {
+  position: absolute;
+  z-index: 1;
+  left: 965px;
+  top: 737px;
+  width: 478px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
 
 .up-bgm {
   display: none;
@@ -627,6 +637,9 @@ input[type="text"]:focus { border-color: #1f9b46; }
     z-index: 2;
   }
   .up-cube {
+    display: none;
+  }
+  .up-shadow {
     display: none;
   }
 }

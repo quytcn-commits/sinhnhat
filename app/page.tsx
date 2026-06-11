@@ -291,6 +291,9 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Bóng gương (reflection) ngay dưới chân poster */}
+        <img className="up-shadow" src="/login/poster-shadow.png" alt="" />
+
         {/* Cube đè lên góc phải dưới poster */}
         <img className="up-cube" src="/login/cube-up.png" alt="" />
 
