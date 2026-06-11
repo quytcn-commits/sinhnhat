@@ -542,7 +542,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
   position: absolute;
   z-index: 3;
   left: 382px;
-  top: 578px;
+  top: 610px;
   transform: translateX(-50%);
   display: flex;
   gap: 23px;
