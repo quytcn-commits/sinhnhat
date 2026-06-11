@@ -520,6 +520,15 @@ input[type="text"]:focus { border-color: #1f9b46; }
   transform: translate(-50%, -50%);
   width: 478px;
 }
+/* Cube trang trí góc phải dưới (cắt mép như design) */
+.up-cube {
+  position: absolute;
+  z-index: 1;
+  right: -36px;
+  bottom: 16px;
+  width: 300px;
+  pointer-events: none;
+}
 
 .up-bgm {
   display: none;
@@ -600,6 +609,9 @@ input[type="text"]:focus { border-color: #1f9b46; }
     width: 92vw;
     margin: 16px auto 36px;
     z-index: 2;
+  }
+  .up-cube {
+    display: none;
   }
 }
 

@@ -32,9 +32,16 @@ export default function Home() {
   // mọi độ phân giải (HD/Full HD/2K/4K). Khởi tạo 1 (khớp SSR, không mismatch),
   // set giá trị thật trong layout-effect (trước khi vẽ → không nháy, không kẹt).
   const [loginScale, setLoginScale] = useState(1);
+  // Màn kết quả có poster cao → dùng CONTAIN (vừa khít khung, không cắt poster);
+  // login dùng COVER (phủ kín). Tách 2 scale.
+  const [upScale, setUpScale] = useState(1);
   useIsoLayoutEffect(() => {
-    const fit = () =>
-      setLoginScale(Math.max(window.innerWidth / 1440, window.innerHeight / 800));
+    const fit = () => {
+      const w = window.innerWidth / 1440;
+      const h = window.innerHeight / 800;
+      setLoginScale(Math.max(w, h));
+      setUpScale(Math.min(w, h));
+    };
     fit();
     window.addEventListener("resize", fit);
     return () => window.removeEventListener("resize", fit);
@@ -200,7 +207,7 @@ export default function Home() {
     <div className="up">
       <div
         className="up-stage"
-        style={{ transform: `translate(-50%, -50%) scale(${loginScale})` }}
+        style={{ transform: `translate(-50%, -50%) scale(${upScale})` }}
       >
         <div className="login-bg">
           <img src="/login/bg.png" alt="" />
@@ -283,6 +290,9 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        {/* Cube trang trí góc phải dưới */}
+        <img className="up-cube" src="/login/cube.png" alt="" />
 
         {/* Cột phải: poster preview */}
         <div className="up-poster">
