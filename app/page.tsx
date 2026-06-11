@@ -197,68 +197,105 @@ export default function Home() {
   }
 
   return (
-    <div className="wrap">
-      <div className="brand">
-        <h1>NEWWAY REALTY</h1>
-        <p>Tri ân hành trình đồng hành — Fight For Five</p>
+    <div className="up">
+      <div
+        className="up-stage"
+        style={{ transform: `translate(-50%, -50%) scale(${loginScale})` }}
+      >
+        <div className="login-bg">
+          <img src="/login/bg.png" alt="" />
+        </div>
+
+        {/* Cột trái: branding + card thông tin */}
+        <div className="up-left">
+          <div className="login-logo">
+            <img className="mark" src="/login/logo-mark.png" alt="" />
+            <img className="txt" src="/login/logo-text.png" alt="NewWay Realty" />
+          </div>
+          <img className="login-fight up-fight" src="/login/fight.png" alt="Fight For Five" />
+          <div className="login-sub up-sub">
+            <img className="login-badge" src="/login/badge.png" alt="5 Năm Khát Vọng" />
+            <div className="login-tagline">
+              VỮNG VÀNG
+              <br />
+              VỊ THẾ DẪN ĐẦU
+            </div>
+          </div>
+
+          <div className="up-card">
+            <div className="up-name">{info.fullName}</div>
+            <div className="up-title">{info.title}</div>
+            <div className="up-info">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.2 4.2L19 7"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span>
+                Đã đồng hành <b>{info.daysText}</b> ngày – Gia nhập {info.joinDateText}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              className="up-upload"
+              onClick={() => fileRef.current?.click()}
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 11l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z" />
+              </svg>
+              {photoUrl ? "Đổi ảnh khác" : "Đính kèm hình ảnh"}
+            </button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="image/*"
+              onChange={onPhoto}
+              style={{ display: "none" }}
+            />
+
+            {photoUrl && (
+              <div className="up-actions">
+                <button
+                  className="login-btn"
+                  onClick={download}
+                  disabled={busy || !posterReady}
+                >
+                  {busy ? "Đang xử lý…" : !posterReady ? "Đang dựng…" : "Tải về"}
+                </button>
+                <button
+                  className="login-btn"
+                  onClick={share}
+                  disabled={busy || !posterReady}
+                >
+                  Chia sẻ
+                </button>
+              </div>
+            )}
+            {error && <div className="login-error">{error}</div>}
+
+            <button type="button" className="up-reset" onClick={reset}>
+              ← Tra cứu người khác
+            </button>
+          </div>
+        </div>
+
+        {/* Cột phải: poster preview */}
+        <div className="up-poster">
+          <Poster
+            ref={posterRef}
+            data={{ ...info, photoUrl }}
+            onNumberReady={handleNumberReady}
+          />
+        </div>
       </div>
 
-      {info && (
-        <div className="card">
-          <div className="info-line">
-            Xin chào <b>{info.fullName}</b> — {info.title}
-          </div>
-          <div className="info-line">
-            Đã đồng hành <b>{info.daysText}</b> ngày · Gia nhập {info.joinDateText}
-          </div>
-
-          <label style={{ marginTop: 16 }}>Tải ảnh chân dung của bạn</label>
-          <div
-            className={`uploadbox ${photoUrl ? "has" : ""}`}
-            onClick={() => fileRef.current?.click()}
-          >
-            {photoUrl ? "✓ Đã chọn ảnh — bấm để đổi ảnh khác" : "📷 Bấm để chọn ảnh"}
-          </div>
-          <input
-            ref={fileRef}
-            type="file"
-            accept="image/*"
-            onChange={onPhoto}
-            style={{ display: "none" }}
-          />
-
-          <div style={{ marginTop: 18 }}>
-            <Poster
-              ref={posterRef}
-              data={{ ...info, photoUrl }}
-              onNumberReady={handleNumberReady}
-            />
-          </div>
-
-          <div className="row" style={{ marginTop: 16 }}>
-            <button
-              className="btn"
-              onClick={share}
-              disabled={busy || !photoUrl || !posterReady}
-            >
-              {busy ? "Đang xử lý…" : !posterReady ? "Đang dựng poster…" : "Chia sẻ"}
-            </button>
-            <button
-              className="btn secondary"
-              onClick={download}
-              disabled={busy || !photoUrl || !posterReady}
-            >
-              Tải về
-            </button>
-          </div>
-          {!photoUrl && <div className="hint">Hãy tải ảnh chân dung để hoàn tất poster.</div>}
-          {error && <div className="error">{error}</div>}
-
-          <button className="btn ghost" style={{ marginTop: 16 }} onClick={reset}>
-            ← Tra cứu người khác
-          </button>
-        </div>
-      )}
+      {/* Nền mobile (rays + skyline + cube) */}
+      <img className="up-bgm" src="/login/bg-mobile.png" alt="" />
     </div>
   );
 }
