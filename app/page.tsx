@@ -205,15 +205,14 @@ export default function Home() {
 
   return (
     <div className="up">
-      {/* Nền phủ kín toàn màn (cover) — hai bên không bị dải tối trên màn ultrawide */}
-      <div className="up-bg">
-        <img src="/login/bg.png" alt="" />
-      </div>
-
       <div
         className="up-stage"
         style={{ transform: `translate(-50%, -50%) scale(${upScale})` }}
       >
+        {/* Nền rộng NẰM TRONG khung (cùng scale) → chân poster + cube khớp đường rays;
+            rộng 2304 để phủ kín màn rộng khi contain */}
+        <img className="up-bg" src="/login/up-bg-wide.png" alt="" />
+
         {/* Cột trái: branding + card thông tin */}
         <div className="up-left">
           <div className="login-logo">
