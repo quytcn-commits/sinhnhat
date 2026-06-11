@@ -537,6 +537,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .up-poster .poster-scale {
   border-radius: 0;
 }
+/* Glow mềm quanh poster để hoà vào nền (không lộ khung chữ nhật cạnh cứng) như design */
+.up-poster .poster-scale {
+  box-shadow: 0 0 90px 18px rgba(205, 240, 214, 0.32);
+}
 /* Cube ĐÈ LÊN poster, góc phải dưới (z-index trên poster) như design */
 .up-cube {
   position: absolute;
