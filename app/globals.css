@@ -536,17 +536,6 @@ input[type="text"]:focus { border-color: #1f9b46; }
 /* Bỏ bo góc poster ở màn kết quả để khớp với bóng gương (shadow) phẳng bên dưới */
 .up-poster .poster-scale {
   border-radius: 0;
-  /* Fade mép trái/phải/trên cho poster hoà vào nền như design (hết cạnh cứng =
-     'ô vuông'). Giữ đáy đặc để nối bóng gương. Mask chỉ ở hiển thị; ảnh tải về
-     chụp node .poster bên trong nên KHÔNG bị fade. */
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 3.5%, #000 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 3.5%, #000 100%);
-  mask-composite: intersect;
 }
 /* Cube ĐÈ LÊN poster, góc phải dưới (z-index trên poster) như design */
 .up-cube {
