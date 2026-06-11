@@ -601,7 +601,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
     left: auto;
     width: 77.7vw;
     margin: 0 auto;
-    padding-top: 58px;
+    padding-top: 24px;
     z-index: 2;
   }
   /* Mobile result chỉ hiện LOGO (design không có FIGHT/badge/tagline) */
@@ -666,8 +666,15 @@ input[type="text"]:focus { border-color: #1f9b46; }
     width: 67%;
     filter: drop-shadow(-13px -5px 22px rgba(3, 33, 15, 0.25));
   }
+  /* Bóng gương phản chiếu ngay dưới chân poster (như design) */
   .up-shadow {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 0;
   }
 }
 
