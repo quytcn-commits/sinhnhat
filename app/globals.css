@@ -541,7 +541,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .up-cube {
   position: absolute;
   z-index: 4;
-  right: -16px;
+  right: 34px;
   bottom: 14px;
   width: 270px;
   pointer-events: none;
