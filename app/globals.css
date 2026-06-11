@@ -541,10 +541,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .up-cube {
   position: absolute;
   z-index: 4;
-  right: -10px;
-  /* đỉnh cube ngang badge KHÁT VỌNG (~54% poster); đáy thấp hơn poster (đứng trước) */
-  bottom: -4px;
-  width: 352px;
+  right: 55px;
+  /* hạ thấp hơn đáy poster 1 chút -> cube như vật thể đứng TRƯỚC poster */
+  bottom: -12px;
+  width: 249px;
   pointer-events: none;
   /* Drop shadow theo HÌNH cube (Figma: X-30 Y-10 Blur50 #03210F 25%, scale theo
      cỡ hiển thị 249/376). filter:drop-shadow bám alpha-shape -> không bị ô vuông */
