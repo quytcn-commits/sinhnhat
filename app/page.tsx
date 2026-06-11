@@ -291,19 +291,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bóng gương (reflection) ngay dưới chân poster */}
-        <img className="up-shadow" src="/login/poster-shadow.png" alt="" />
+        {/* Cụm poster: shadow + cube + poster (PC: display:contents giữ vị trí
+            tuyệt đối theo stage; mobile: wrapper relative để canh cube theo poster) */}
+        <div className="up-poster-area">
+          {/* Bóng gương (reflection) ngay dưới chân poster */}
+          <img className="up-shadow" src="/login/poster-shadow.png" alt="" />
 
-        {/* Cube đè lên góc phải dưới poster */}
-        <img className="up-cube" src="/login/cube-up.png" alt="" />
+          {/* Cube đè lên góc phải dưới poster */}
+          <img className="up-cube" src="/login/cube-up.png" alt="" />
 
-        {/* Cột phải: poster preview */}
-        <div className="up-poster">
-          <Poster
-            ref={posterRef}
-            data={{ ...info, photoUrl }}
-            onNumberReady={handleNumberReady}
-          />
+          {/* Poster preview */}
+          <div className="up-poster">
+            <Poster
+              ref={posterRef}
+              data={{ ...info, photoUrl }}
+              onNumberReady={handleNumberReady}
+            />
+          </div>
         </div>
       </div>
 
