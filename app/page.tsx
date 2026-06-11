@@ -247,16 +247,32 @@ export default function Home() {
               </span>
             </div>
 
-            <button
-              type="button"
-              className="up-upload"
-              onClick={() => fileRef.current?.click()}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 11l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z" />
-              </svg>
-              {photoUrl ? "Đổi ảnh khác" : "Đính kèm hình ảnh"}
-            </button>
+            {!photoUrl ? (
+              <button
+                type="button"
+                className="up-upload"
+                onClick={() => fileRef.current?.click()}
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 11l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z" />
+                </svg>
+                Đính kèm hình ảnh
+              </button>
+            ) : (
+              <div className="up-uploaded">
+                <span className="up-up-ok">Tải ảnh thành công</span>
+                <button
+                  type="button"
+                  className="up-edit"
+                  onClick={() => fileRef.current?.click()}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 12.5l4.2 4.2L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Chỉnh sửa
+                </button>
+              </div>
+            )}
             <input
               ref={fileRef}
               type="file"
@@ -265,24 +281,6 @@ export default function Home() {
               style={{ display: "none" }}
             />
 
-            {photoUrl && (
-              <div className="up-actions">
-                <button
-                  className="login-btn"
-                  onClick={download}
-                  disabled={busy || !posterReady}
-                >
-                  {busy ? "Đang xử lý…" : !posterReady ? "Đang dựng…" : "Tải về"}
-                </button>
-                <button
-                  className="login-btn"
-                  onClick={share}
-                  disabled={busy || !posterReady}
-                >
-                  Chia sẻ
-                </button>
-              </div>
-            )}
             {error && <div className="login-error">{error}</div>}
 
             <button type="button" className="up-reset" onClick={reset}>
@@ -309,6 +307,36 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* Nút Tải xuống / Chia sẻ — sau poster (mobile dưới cùng; PC absolute dưới card) */}
+        {photoUrl && (
+          <div className="up-actions">
+            <div className="up-act">
+              <button
+                type="button"
+                className="up-actbtn"
+                onClick={download}
+                disabled={busy || !posterReady}
+                aria-label="Tải xuống"
+              >
+                <img src="/login/btn-download.png" alt="" />
+              </button>
+              <span>TẢI XUỐNG</span>
+            </div>
+            <div className="up-act">
+              <button
+                type="button"
+                className="up-actbtn"
+                onClick={share}
+                disabled={busy || !posterReady}
+                aria-label="Chia sẻ"
+              >
+                <img src="/login/btn-share.png" alt="" />
+              </button>
+              <span>CHIA SẺ</span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Nền mobile (rays + skyline + cube) */}

@@ -504,15 +504,78 @@ input[type="text"]:focus { border-color: #1f9b46; }
   background: rgba(0, 0, 0, 0.28);
   border-color: #64c686;
 }
-.up-actions {
-  display: flex;
-  gap: 10px;
+/* Trạng thái sau khi đính kèm ảnh: "Tải ảnh thành công ✓ Chỉnh sửa" */
+.up-uploaded {
   width: 100%;
-  margin-top: 2px;
+  height: 52px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.22);
+  font-size: 15px;
 }
-.up-actions .login-btn {
-  flex: 1;
-  height: 48px;
+.up-up-ok {
+  color: #cfe6d6;
+}
+.up-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64c686;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: inherit;
+}
+.up-edit svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Nút Tải xuống / Chia sẻ — tròn + icon + label (dưới card ở PC; flow dưới poster ở mobile) */
+.up-actions {
+  position: absolute;
+  z-index: 3;
+  left: 384px;
+  top: 660px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+}
+.up-act {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.up-actbtn {
+  width: 62px;
+  height: 62px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.up-actbtn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.up-actbtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.up-act span {
+  color: #eaf6ee;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
 }
 .up-reset {
   margin-top: 4px;
@@ -633,8 +696,14 @@ input[type="text"]:focus { border-color: #1f9b46; }
     font-size: 13px;
     margin-top: 2px;
   }
-  .up-actions .login-btn {
-    height: 42px;
+  /* Mobile: nút Tải xuống/Chia sẻ flow ở cuối (dưới poster) */
+  .up-actions {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 4px auto 40px;
+    gap: 64px;
   }
   .up-reset {
     font-size: 12px;
