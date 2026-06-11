@@ -696,9 +696,11 @@ input[type="text"]:focus { border-color: #1f9b46; }
     font-size: 13px;
     margin-top: 2px;
   }
-  /* Mobile: nút Tải xuống/Chia sẻ flow ở cuối (dưới poster) */
+  /* Mobile: nút Tải xuống/Chia sẻ flow ở cuối (dưới poster). position:relative +
+     z-index để KHÔNG bị nền up-bgm (fixed) che. */
   .up-actions {
-    position: static;
+    position: relative;
+    z-index: 2;
     left: auto;
     top: auto;
     transform: none;
