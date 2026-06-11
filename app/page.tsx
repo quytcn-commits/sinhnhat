@@ -205,14 +205,15 @@ export default function Home() {
 
   return (
     <div className="up">
+      {/* Nền phủ kín toàn màn (cover) — hai bên không bị dải tối trên màn ultrawide */}
+      <div className="up-bg">
+        <img src="/login/bg.png" alt="" />
+      </div>
+
       <div
         className="up-stage"
         style={{ transform: `translate(-50%, -50%) scale(${upScale})` }}
       >
-        <div className="login-bg">
-          <img src="/login/bg.png" alt="" />
-        </div>
-
         {/* Cột trái: branding + card thông tin */}
         <div className="up-left">
           <div className="login-logo">

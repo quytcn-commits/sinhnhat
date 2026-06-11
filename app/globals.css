@@ -382,9 +382,25 @@ input[type="text"]:focus { border-color: #1f9b46; }
     #000e00 100%
   );
 }
-/* Khung 1440×800 scale cover (JS set transform) — đồng bộ login */
+/* Nền phủ kín toàn màn (cover) — tách khỏi khung nội dung để không có dải tối 2 bên */
+.up-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.up-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+/* Khung nội dung 1440×800 — CONTAIN (poster vừa khít, có lề); nền do .up-bg lo */
 .up-stage {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   width: 1440px;
@@ -544,6 +560,9 @@ input[type="text"]:focus { border-color: #1f9b46; }
   }
   .up-stage {
     display: contents;
+  }
+  .up-bg {
+    display: none;
   }
   .up-bgm {
     display: block;
