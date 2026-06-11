@@ -292,8 +292,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Cube trang trí góc phải dưới */}
-        <img className="up-cube" src="/login/cube.png" alt="" />
+        {/* Cube đè lên góc phải dưới poster */}
+        <img className="up-cube" src="/login/cube-up.png" alt="" />
 
         {/* Cột phải: poster preview */}
         <div className="up-poster">
