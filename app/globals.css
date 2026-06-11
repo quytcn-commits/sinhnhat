@@ -520,13 +520,13 @@ input[type="text"]:focus { border-color: #1f9b46; }
   transform: translate(-50%, -50%);
   width: 478px;
 }
-/* Cube trang trí góc phải dưới (cắt mép như design) */
+/* Cube trang trí góc phải dưới — NGOÀI poster, cắt mép như design (x1140-1440, y400-770) */
 .up-cube {
   position: absolute;
   z-index: 1;
-  right: -36px;
-  bottom: 16px;
-  width: 300px;
+  right: -28px;
+  bottom: 26px;
+  width: 286px;
   pointer-events: none;
 }
 
