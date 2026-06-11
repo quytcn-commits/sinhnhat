@@ -312,7 +312,7 @@ export default function Home() {
       </div>
 
       {/* Nền mobile (rays + skyline + cube) */}
-      <img className="up-bgm" src="/login/bg-mobile.png" alt="" />
+      <img className="up-bgm" src="/login/bg-mobile-up.png" alt="" />
     </div>
   );
 }
