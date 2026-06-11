@@ -541,22 +541,24 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .up-actions {
   position: absolute;
   z-index: 3;
-  left: 384px;
-  top: 660px;
+  left: 382px;
+  top: 578px;
   transform: translateX(-50%);
   display: flex;
-  gap: 70px;
+  gap: 23px;
   justify-content: center;
 }
 .up-act {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0;
 }
+/* Ảnh nút mới 110px: vòng tròn xanh chiếm 53.6% (≈59px), còn lại là glow.
+   Hiển thị native 110px -> vòng tròn đúng 59px như design. */
 .up-actbtn {
-  width: 62px;
-  height: 62px;
+  width: 110px;
+  height: 110px;
   padding: 0;
   border: none;
   background: none;
@@ -572,10 +574,13 @@ input[type="text"]:focus { border-color: #1f9b46; }
   cursor: default;
 }
 .up-act span {
-  color: #eaf6ee;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  /* glow padding của ảnh ~26px dưới vòng tròn -> kéo label lên sát đáy vòng tròn */
+  margin-top: -8px;
 }
 .up-reset {
   margin-top: 4px;
@@ -705,7 +710,16 @@ input[type="text"]:focus { border-color: #1f9b46; }
     top: auto;
     transform: none;
     margin: 4px auto 40px;
-    gap: 64px;
+    gap: 40px;
+  }
+  /* Mobile: ảnh nút có glow padding -> box 84px cho vòng tròn ~45px */
+  .up-actbtn {
+    width: 84px;
+    height: 84px;
+  }
+  .up-act span {
+    font-size: 12px;
+    margin-top: -6px;
   }
   .up-reset {
     font-size: 12px;
