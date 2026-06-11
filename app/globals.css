@@ -640,11 +640,11 @@ input[type="text"]:focus { border-color: #1f9b46; }
     font-size: 12px;
     margin-top: 2px;
   }
-  /* Wrapper poster = ngữ cảnh định vị cho cube trên mobile */
+  /* Wrapper poster = ngữ cảnh định vị cho cube. Poster 72.6vw như design (centered) */
   .up-poster-area {
     display: block;
     position: relative;
-    width: 92vw;
+    width: 72.6vw;
     margin: 16px auto 56px;
     z-index: 2;
   }
@@ -656,15 +656,15 @@ input[type="text"]:focus { border-color: #1f9b46; }
     width: 100%;
     margin: 0;
   }
-  /* Cube hiện ở mobile: đè góc phải dưới poster, đứng trước (đáy thấp hơn) */
+  /* Cube mobile theo design: rộng ~67% poster (visible), đè + cắt mép phải, đứng trước */
   .up-cube {
     display: block;
     position: absolute;
     left: auto;
-    right: -7%;
-    bottom: -3%;
-    width: 45%;
-    filter: drop-shadow(-12px -4px 20px rgba(3, 33, 15, 0.25));
+    right: -18%;
+    bottom: -2%;
+    width: 67%;
+    filter: drop-shadow(-13px -5px 22px rgba(3, 33, 15, 0.25));
   }
   .up-shadow {
     display: none;
