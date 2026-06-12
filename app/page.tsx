@@ -41,8 +41,13 @@ export default function Home() {
   const [savedImageUrl, setSavedImageUrl] = useState<string | null>(null);
   // Cờ đang mở trong trình duyệt in-app (Zalo...) → hiện gợi ý.
   const [inApp, setInApp] = useState(false);
+  // CHỈ iOS + in-app (Zalo iOS) mới thực sự khó lưu ảnh → hiện banner mở Safari.
+  // (Android Zalo tải thẳng được nên không cần.)
+  const [iosInApp, setIosInApp] = useState(false);
+  const [barClosed, setBarClosed] = useState(false);
   useEffect(() => {
     setInApp(isInAppBrowser());
+    setIosInApp(isIOSDevice() && isInAppBrowser());
   }, []);
 
   // Reset cờ ready mỗi khi đổi người tra cứu (đổi số ngày) → chờ vẽ lại
@@ -160,13 +165,16 @@ export default function Home() {
       const nav = navigator as Navigator & {
         canShare?: (d: ShareData) => boolean;
       };
-      const mobileLike = isIOSDevice() || isInAppBrowser();
+      // Yếu tố quyết định là iOS (vì iOS BỎ QUA <a download>), không phải in-app.
+      const ios = isIOSDevice();
 
-      // Thử share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh") — cần File.
-      if (nav.canShare) {
+      // Share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh"):
+      // - iOS: BẮT BUỘC (vì không tải trực tiếp được)
+      // - Mọi máy: khi bấm nút Chia sẻ
+      if ((ios || preferShare) && nav.canShare) {
         const blob = await (await fetch(dataUrl)).blob();
         const file = new File([blob], name, { type: "image/png" });
-        if (nav.canShare({ files: [file] }) && (preferShare || mobileLike)) {
+        if (nav.canShare({ files: [file] })) {
           try {
             await navigator.share({ files: [file], title: "NewWay Realty" });
             return;
@@ -177,14 +185,14 @@ export default function Home() {
         }
       }
 
-      // iOS/in-app không share được file → hiện ảnh (DATA URL, nhấn giữ "Lưu ảnh"
-      // hoạt động tốt hơn blob: URL) để người dùng lưu về máy.
-      if (mobileLike) {
+      // iOS không share được file (Zalo iOS) → hiện ảnh (DATA URL) để nhấn giữ
+      // "Lưu ảnh". CHỈ iOS — Android/desktop tải thẳng ở dưới.
+      if (ios) {
         setSavedImageUrl(dataUrl);
         return;
       }
 
-      // Desktop: tải file trực tiếp.
+      // Desktop + Android (kể cả Android Zalo): <a download> hoạt động → tải thẳng.
       const a = document.createElement("a");
       a.href = dataUrl;
       a.download = name;
@@ -206,9 +214,29 @@ export default function Home() {
     setError(null);
   }
 
+  // Banner hiện NGAY TỪ ĐẦU cho iOS mở trong Zalo/FB — nơi tải ảnh khó nhất.
+  const openBrowserBar =
+    iosInApp && !barClosed ? (
+      <div className="open-browser-bar">
+        <span>
+          💡 Để lưu ảnh dễ nhất, hãy mở bằng <b>Safari</b>: bấm <b>“⋯”</b> góc trên
+          → <b>“Mở bằng trình duyệt”</b>
+        </span>
+        <button
+          type="button"
+          className="open-browser-close"
+          aria-label="Đóng"
+          onClick={() => setBarClosed(true)}
+        >
+          ×
+        </button>
+      </div>
+    ) : null;
+
   if (!info) {
     return (
       <div className="login">
+        {openBrowserBar}
         {/* Khung 1440×800 cố định — scale đồng đều (cover) để LUÔN giống design
             ở mọi tỉ lệ màn. Nền + chữ + card + cube nằm chung, không lệch nhau. */}
         <div
@@ -270,6 +298,7 @@ export default function Home() {
 
   return (
     <div className="up">
+      {openBrowserBar}
       <div
         className="up-stage"
         style={{ transform: `translate(-50%, -50%) scale(${upScale})` }}
@@ -403,13 +432,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Gợi ý cho người mở từ Zalo/Facebook: nếu kẹt, mở bằng trình duyệt thật */}
-        {photoUrl && inApp && (
-          <p className="up-hint">
-            Đang mở trong ứng dụng (Zalo/Facebook). Nếu lưu ảnh bị lỗi, bấm menu
-            “⋯” góc trên rồi chọn <b>“Mở bằng trình duyệt”</b> (Safari/Chrome).
-          </p>
-        )}
       </div>
 
       {/* Nền mobile (rays + skyline + cube) */}
