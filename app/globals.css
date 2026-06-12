@@ -518,11 +518,12 @@ input[type="text"]:focus { border-color: #1f9b46; }
   margin-top: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  /* Căn trái–phải: "Tải ảnh thành công" trái, "Chỉnh sửa" phải */
+  justify-content: space-between;
+  padding: 0 16px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.22);
-  font-size: 15px;
+  font-size: 13px;
 }
 .up-up-ok {
   color: #cfe6d6;
@@ -536,12 +537,12 @@ input[type="text"]:focus { border-color: #1f9b46; }
   cursor: pointer;
   color: #64c686;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 13px;
   font-family: inherit;
 }
 .up-edit svg {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
 }
 
 /* Nút Tải xuống / Chia sẻ — tròn + icon + label (dưới card ở PC; flow dưới poster ở mobile) */
@@ -879,6 +880,15 @@ input[type="text"]:focus { border-color: #1f9b46; }
   .up-reset {
     font-size: 12px;
     margin-top: 2px;
+  }
+  /* Hàng "Tải ảnh thành công / Chỉnh sửa" — cỡ chữ bằng "Tra cứu người khác" */
+  .up-uploaded {
+    height: 46px;
+    font-size: 12px;
+    padding: 0 14px;
+  }
+  .up-edit {
+    font-size: 12px;
   }
   /* Wrapper poster = ngữ cảnh định vị cho cube. Poster 72.6vw như design (centered) */
   .up-poster-area {
