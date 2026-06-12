@@ -649,6 +649,49 @@ input[type="text"]:focus { border-color: #1f9b46; }
   user-select: none;
   -webkit-user-select: none;
 }
+.save-modal-note {
+  color: #ffd9a8;
+  font-size: 12.5px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 340px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.save-modal-note b {
+  color: #fff;
+}
+/* Màn chờ lúc đang tạo ảnh — che poster phóng to khi chụp */
+.busy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(6, 28, 16, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.busy-spinner {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #36c46f;
+  animation: busy-spin 0.8s linear infinite;
+}
+.busy-text {
+  color: #eaf6ee;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+@keyframes busy-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .save-modal-close {
   padding: 11px 32px;
   border: none;

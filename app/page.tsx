@@ -112,7 +112,7 @@ export default function Home() {
     reader.readAsDataURL(file);
   }
 
-  async function renderBlob(): Promise<Blob> {
+  async function renderDataUrl(): Promise<string> {
     const node = posterRef.current!;
     // iOS Safari dựng SAI vị trí các phần tử absolute nếu node đang có
     // transform: scale() (poster thu nhỏ cho vừa khung). Khắc phục: tạm đặt
@@ -135,8 +135,7 @@ export default function Home() {
         height: 2048,
         scale: 1,
       });
-      const r = await fetch(dataUrl);
-      return r.blob();
+      return dataUrl;
     } finally {
       node.style.transform = prevTransform;
       node.style.transformOrigin = prevOrigin;
@@ -156,38 +155,40 @@ export default function Home() {
     if (!posterRef.current) return;
     setBusy(true);
     try {
-      const blob = await renderBlob();
+      const dataUrl = await renderDataUrl();
       const name = posterFileName();
-      const file = new File([blob], name, { type: "image/png" });
       const nav = navigator as Navigator & {
         canShare?: (d: ShareData) => boolean;
       };
-      const canShareFile = !!nav.canShare && nav.canShare({ files: [file] });
       const mobileLike = isIOSDevice() || isInAppBrowser();
 
-      if (canShareFile && (preferShare || mobileLike)) {
-        try {
-          await navigator.share({ files: [file], title: "NewWay Realty" });
-          return;
-        } catch (e) {
-          // Người dùng bấm Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
-          if ((e as Error)?.name === "AbortError") return;
+      // Thử share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh") — cần File.
+      if (nav.canShare) {
+        const blob = await (await fetch(dataUrl)).blob();
+        const file = new File([blob], name, { type: "image/png" });
+        if (nav.canShare({ files: [file] }) && (preferShare || mobileLike)) {
+          try {
+            await navigator.share({ files: [file], title: "NewWay Realty" });
+            return;
+          } catch (e) {
+            // Người dùng Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
+            if ((e as Error)?.name === "AbortError") return;
+          }
         }
       }
 
-      // iOS/in-app không share được file → hiện ảnh để nhấn giữ "Lưu ảnh".
+      // iOS/in-app không share được file → hiện ảnh (DATA URL, nhấn giữ "Lưu ảnh"
+      // hoạt động tốt hơn blob: URL) để người dùng lưu về máy.
       if (mobileLike) {
-        setSavedImageUrl(URL.createObjectURL(blob));
+        setSavedImageUrl(dataUrl);
         return;
       }
 
       // Desktop: tải file trực tiếp.
-      const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = url;
+      a.href = dataUrl;
       a.download = name;
       a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 10000);
     } catch {
       setError("Không tạo được ảnh, thử lại nhé");
     } finally {
@@ -414,15 +415,28 @@ export default function Home() {
       {/* Nền mobile (rays + skyline + cube) */}
       <img className="up-bgm" src="/login/bg-mobile-up.png" alt="" />
 
+      {/* Màn chờ che lúc đang chụp (tránh nháy poster phóng to scale(1)) */}
+      {busy && !savedImageUrl && (
+        <div className="busy-overlay">
+          <div className="busy-spinner" />
+          <div className="busy-text">Đang tạo ảnh…</div>
+        </div>
+      )}
+
       {/* Lớp lưu ảnh: hiện poster để NHẤN GIỮ → "Lưu ảnh" (iOS / Zalo / FB...) */}
       {savedImageUrl && (
         <div className="save-modal" onClick={() => setSavedImageUrl(null)}>
           <div className="save-modal-inner" onClick={(e) => e.stopPropagation()}>
             <div className="save-modal-hint">
-              Nhấn giữ vào ảnh → chọn <b>“Lưu ảnh”</b> / <b>“Thêm vào Ảnh”</b> để
-              tải về máy
+              Nhấn giữ vào ảnh → chọn <b>“Lưu ảnh”</b> / <b>“Thêm vào Ảnh”</b>
             </div>
             <img src={savedImageUrl} alt="Poster NewWay Realty" />
+            {inApp && (
+              <div className="save-modal-note">
+                Lưu không được? Bấm <b>“⋯”</b> góc trên → <b>“Mở bằng trình duyệt”</b>{" "}
+                (Safari) rồi tải lại.
+              </div>
+            )}
             <button
               type="button"
               className="save-modal-close"
