@@ -794,16 +794,29 @@ input[type="text"]:focus { border-color: #1f9b46; }
   display: none;
 }
 
-/* Mobile: xếp dọc + cuộn */
+/* Mobile: khung kết quả scale VỪA 1 màn (không cuộn) */
 @media (max-width: 760px) {
   .up {
     position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  /* Khung gom toàn bộ nội dung -> đo & scale cho vừa chiều cao (JS đặt transform) */
   .up-stage {
-    display: contents;
+    position: relative;
+    z-index: 1;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: center center;
   }
   .up-bg {
     display: none;
@@ -825,7 +838,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
     left: auto;
     width: 77.7vw;
     margin: 0 auto;
-    padding-top: 24px;
+    padding-top: 8px;
     z-index: 2;
   }
   /* Mobile result chỉ hiện LOGO (design không có FIGHT/badge/tagline) */
@@ -865,7 +878,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
     left: auto;
     top: auto;
     transform: none;
-    margin: 4px auto 40px;
+    margin: 6px auto 8px;
     gap: 40px;
   }
   /* Mobile: ảnh nút có glow padding -> box 84px cho vòng tròn ~45px */
@@ -895,7 +908,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
     display: block;
     position: relative;
     width: 72.6vw;
-    margin: 16px auto 56px;
+    margin: 8px auto 8px;
     z-index: 2;
   }
   .up-poster {

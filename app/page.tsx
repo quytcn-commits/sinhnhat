@@ -73,17 +73,47 @@ export default function Home() {
   // Màn kết quả có poster cao → dùng CONTAIN (vừa khít khung, không cắt poster);
   // login dùng COVER (phủ kín). Tách 2 scale.
   const [upScale, setUpScale] = useState(1);
+  // Mobile: thu nhỏ toàn bộ màn kết quả cho VỪA 1 màn (không cuộn).
+  const [isMobile, setIsMobile] = useState(false);
+  const [mScale, setMScale] = useState(1);
+  const stageRef = useRef<HTMLDivElement>(null);
   useIsoLayoutEffect(() => {
     const fit = () => {
       const w = window.innerWidth / 1440;
       const h = window.innerHeight / 800;
       setLoginScale(Math.max(w, h));
       setUpScale(Math.min(w, h));
+      setIsMobile(window.innerWidth <= 760);
     };
     fit();
     window.addEventListener("resize", fit);
     return () => window.removeEventListener("resize", fit);
   }, []);
+
+  // Mobile result: đo chiều cao layout THẬT của khung (không bị ảnh hưởng bởi
+  // transform của chính nó) rồi scale cho vừa chiều cao màn hình thật.
+  useIsoLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    const el = stageRef.current;
+    const fitMobile = () => {
+      if (window.innerWidth > 760 || !stageRef.current) {
+        setMScale(1);
+        return;
+      }
+      const natural = stageRef.current.offsetHeight;
+      if (!natural) return;
+      const avail = window.innerHeight - 12;
+      setMScale(Math.min(1, avail / natural));
+    };
+    fitMobile();
+    const ro = el ? new ResizeObserver(fitMobile) : null;
+    ro?.observe(el!);
+    window.addEventListener("resize", fitMobile);
+    return () => {
+      window.removeEventListener("resize", fitMobile);
+      ro?.disconnect();
+    };
+  }, [info, photoUrl, posterReady]);
 
   const posterRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -301,7 +331,12 @@ export default function Home() {
       {openBrowserBar}
       <div
         className="up-stage"
-        style={{ transform: `translate(-50%, -50%) scale(${upScale})` }}
+        ref={stageRef}
+        style={
+          isMobile
+            ? { transform: `scale(${mScale})`, transformOrigin: "center center" }
+            : { transform: `translate(-50%, -50%) scale(${upScale})` }
+        }
       >
         {/* Nền rộng NẰM TRONG khung (cùng scale) → chân poster + cube khớp đường rays;
             rộng 2304 để phủ kín màn rộng khi contain */}
