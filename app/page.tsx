@@ -143,23 +143,51 @@ export default function Home() {
     }
   }
 
-  async function download() {
+  function posterFileName() {
+    return `poster-${(info?.fullName || "newway").replace(/\s+/g, "-").toLowerCase()}.png`;
+  }
+
+  // Lưu/chia sẻ ảnh poster theo cách tốt nhất cho từng nền tảng.
+  // - iOS / in-app (Zalo, FB...): mở SHARE SHEET hệ thống → có "Lưu ảnh" /
+  //   "Thêm vào Ảnh" / gửi Zalo (1 chạm, đáng tin nhất trên iPhone).
+  // - Nếu không hỗ trợ share file: hiện ảnh full-màn để nhấn giữ "Lưu ảnh".
+  // - Desktop: tải file trực tiếp.
+  async function saveImage(preferShare: boolean) {
     if (!posterRef.current) return;
     setBusy(true);
     try {
       const blob = await renderBlob();
-      const url = URL.createObjectURL(blob);
-      // iOS + trình duyệt in-app (Zalo/FB...) KHÔNG tải được qua <a download> →
-      // hiện ảnh full-màn để người dùng nhấn giữ → "Lưu ảnh".
-      if (isIOSDevice() || isInAppBrowser()) {
-        setSavedImageUrl(url);
-      } else {
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `poster-${(info?.fullName || "newway").replace(/\s+/g, "-").toLowerCase()}.png`;
-        a.click();
-        setTimeout(() => URL.revokeObjectURL(url), 10000);
+      const name = posterFileName();
+      const file = new File([blob], name, { type: "image/png" });
+      const nav = navigator as Navigator & {
+        canShare?: (d: ShareData) => boolean;
+      };
+      const canShareFile = !!nav.canShare && nav.canShare({ files: [file] });
+      const mobileLike = isIOSDevice() || isInAppBrowser();
+
+      if (canShareFile && (preferShare || mobileLike)) {
+        try {
+          await navigator.share({ files: [file], title: "NewWay Realty" });
+          return;
+        } catch (e) {
+          // Người dùng bấm Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
+          if ((e as Error)?.name === "AbortError") return;
+        }
       }
+
+      // iOS/in-app không share được file → hiện ảnh để nhấn giữ "Lưu ảnh".
+      if (mobileLike) {
+        setSavedImageUrl(URL.createObjectURL(blob));
+        return;
+      }
+
+      // Desktop: tải file trực tiếp.
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = name;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
     } catch {
       setError("Không tạo được ảnh, thử lại nhé");
     } finally {
@@ -167,28 +195,8 @@ export default function Home() {
     }
   }
 
-  async function share() {
-    if (!posterRef.current) return;
-    setBusy(true);
-    try {
-      const blob = await renderBlob();
-      const file = new File([blob], "poster-newway.png", { type: "image/png" });
-      const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
-      if (nav.canShare && nav.canShare({ files: [file] })) {
-        await navigator.share({
-          files: [file],
-          title: "NewWay Realty",
-          text: "Cảm ơn đã đồng hành cùng NewWay Realty 💚",
-        });
-      } else {
-        await download();
-      }
-    } catch {
-      /* người dùng hủy share — bỏ qua */
-    } finally {
-      setBusy(false);
-    }
-  }
+  const download = () => saveImage(false);
+  const share = () => saveImage(true);
 
   function reset() {
     setInfo(null);

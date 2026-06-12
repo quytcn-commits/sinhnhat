@@ -629,6 +629,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
   line-height: 1.5;
   text-align: center;
   max-width: 340px;
+  /* Chặn chọn-text để khi nhấn giữ KHÔNG bật menu Copy/Translate mà trúng ảnh */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 .save-modal-inner img {
   max-width: 100%;
@@ -636,6 +640,14 @@ input[type="text"]:focus { border-color: #1f9b46; }
   height: auto;
   border-radius: 8px;
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55);
+  /* Cho phép menu "Lưu ảnh" khi nhấn giữ ảnh trên iOS; không chọn-text */
+  -webkit-touch-callout: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.save-modal-close {
+  user-select: none;
+  -webkit-user-select: none;
 }
 .save-modal-close {
   padding: 11px 32px;
