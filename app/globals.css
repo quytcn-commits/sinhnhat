@@ -476,6 +476,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
   color: #fff;
   font-weight: 700;
 }
+/* Giữ cụm "Gia nhập <ngày>" trên cùng một dòng (không ngắt giữa chữ và ngày) */
+.up-info .nowrap {
+  white-space: nowrap;
+}
 .up-info svg {
   flex: none;
   width: 17px;

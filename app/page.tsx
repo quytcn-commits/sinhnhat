@@ -337,7 +337,8 @@ export default function Home() {
                 />
               </svg>
               <span>
-                Đã đồng hành <b>{info.daysText}</b> ngày – Gia nhập {info.joinDateText}
+                Đã đồng hành <b>{info.daysText}</b> ngày –{" "}
+                <span className="nowrap">Gia nhập {info.joinDateText}</span>
               </span>
             </div>
 
