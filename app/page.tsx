@@ -332,11 +332,9 @@ export default function Home() {
       <div
         className="up-stage"
         ref={stageRef}
-        style={
-          isMobile
-            ? { transform: `scale(${mScale})`, transformOrigin: "center center" }
-            : { transform: `translate(-50%, -50%) scale(${upScale})` }
-        }
+        style={{
+          transform: `translate(-50%, -50%) scale(${isMobile ? mScale : upScale})`,
+        }}
       >
         {/* Nền rộng NẰM TRONG khung (cùng scale) → chân poster + cube khớp đường rays;
             rộng 2304 để phủ kín màn rộng khi contain */}

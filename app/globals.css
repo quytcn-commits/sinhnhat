@@ -49,6 +49,9 @@ html, body {
   background: #0c3a24;
   color: #14321f;
   -webkit-font-smoothing: antialiased;
+  /* Chống pan/cuộn ngang (iOS Safari hay cho kéo lệch ngang) */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .wrap {
@@ -801,16 +804,14 @@ input[type="text"]:focus { border-color: #1f9b46; }
     height: 100vh;
     height: 100dvh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  /* Khung gom toàn bộ nội dung -> đo & scale cho vừa chiều cao (JS đặt transform) */
+  /* Khung gom nội dung — căn giữa bằng translate(-50%,-50%) + scale (giống màn
+     login, ổn định trên iOS Safari). JS đặt scale cho vừa chiều cao màn. */
   .up-stage {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    top: auto;
-    left: auto;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: auto;
     display: flex;
