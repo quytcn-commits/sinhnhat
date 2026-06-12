@@ -591,6 +591,63 @@ input[type="text"]:focus { border-color: #1f9b46; }
   font-family: inherit;
   cursor: pointer;
 }
+/* Gợi ý khi mở trong app Zalo/Facebook */
+.up-hint {
+  color: #cfe7d6;
+  font-size: 12px;
+  line-height: 1.55;
+  text-align: center;
+  max-width: 320px;
+  margin: -8px auto 28px;
+  padding: 0 16px;
+}
+.up-hint b {
+  color: #ffffff;
+}
+/* Lớp lưu ảnh (nhấn giữ để lưu) — phủ toàn màn */
+.save-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+}
+.save-modal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
+}
+.save-modal-hint {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 340px;
+}
+.save-modal-inner img {
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55);
+}
+.save-modal-close {
+  padding: 11px 32px;
+  border: none;
+  border-radius: 999px;
+  background: #1f6b3f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
 
 /* Poster bên phải, canh tâm (965, 400) */
 .up-poster {

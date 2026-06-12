@@ -7,6 +7,24 @@ import Poster, { type PosterData } from "@/components/Poster";
 // Chạy trước khi browser vẽ trên client (tránh nháy); fallback useEffect khi SSR.
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+// iOS không hỗ trợ thuộc tính <a download> cho ảnh sinh động → phải cho user
+// nhấn giữ ảnh để lưu.
+function isIOSDevice() {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  return (
+    /iPad|iPhone|iPod/.test(ua) ||
+    (navigator.platform === "MacIntel" &&
+      (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints! > 1)
+  );
+}
+// Trình duyệt in-app (Zalo, Facebook, Instagram, TikTok...) chặn tải file blob.
+function isInAppBrowser() {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  return /Zalo|FBAN|FBAV|FB_IAB|Instagram|Line\/|Messenger|TikTok|MicroMessenger/i.test(ua);
+}
+
 type LookupResult = Omit<PosterData, "photoUrl">;
 
 export default function Home() {
@@ -19,11 +37,26 @@ export default function Home() {
   // Số lớn (BigNumber) vẽ bằng canvas ASYNC — chỉ cho Tải/Chia sẻ khi đã vẽ xong
   // để không chụp phải canvas trống.
   const [posterReady, setPosterReady] = useState(false);
+  // Ảnh đã render để hiện full-màn cho user nhấn giữ lưu (iOS / Zalo / FB...).
+  const [savedImageUrl, setSavedImageUrl] = useState<string | null>(null);
+  // Cờ đang mở trong trình duyệt in-app (Zalo...) → hiện gợi ý.
+  const [inApp, setInApp] = useState(false);
+  useEffect(() => {
+    setInApp(isInAppBrowser());
+  }, []);
 
   // Reset cờ ready mỗi khi đổi người tra cứu (đổi số ngày) → chờ vẽ lại
   useEffect(() => {
     setPosterReady(false);
   }, [info?.daysText]);
+
+  // An toàn: nếu canvas onReady không kích hoạt trong WebView hạn chế, vẫn mở
+  // nút sau 5s (lúc này canvas chắc chắn đã vẽ xong).
+  useEffect(() => {
+    if (!photoUrl) return;
+    const t = setTimeout(() => setPosterReady(true), 5000);
+    return () => clearTimeout(t);
+  }, [photoUrl]);
 
   // callback ổn định để không khiến BigNumber vẽ lại mỗi lần parent render
   const handleNumberReady = useCallback(() => setPosterReady(true), []);
@@ -99,11 +132,17 @@ export default function Home() {
     try {
       const blob = await renderBlob();
       const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `poster-${(info?.fullName || "newway").replace(/\s+/g, "-").toLowerCase()}.png`;
-      a.click();
-      URL.revokeObjectURL(url);
+      // iOS + trình duyệt in-app (Zalo/FB...) KHÔNG tải được qua <a download> →
+      // hiện ảnh full-màn để người dùng nhấn giữ → "Lưu ảnh".
+      if (isIOSDevice() || isInAppBrowser()) {
+        setSavedImageUrl(url);
+      } else {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `poster-${(info?.fullName || "newway").replace(/\s+/g, "-").toLowerCase()}.png`;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+      }
     } catch {
       setError("Không tạo được ảnh, thử lại nhé");
     } finally {
@@ -337,10 +376,38 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Gợi ý cho người mở từ Zalo/Facebook: nếu kẹt, mở bằng trình duyệt thật */}
+        {photoUrl && inApp && (
+          <p className="up-hint">
+            Đang mở trong ứng dụng (Zalo/Facebook). Nếu lưu ảnh bị lỗi, bấm menu
+            “⋯” góc trên rồi chọn <b>“Mở bằng trình duyệt”</b> (Safari/Chrome).
+          </p>
+        )}
       </div>
 
       {/* Nền mobile (rays + skyline + cube) */}
       <img className="up-bgm" src="/login/bg-mobile-up.png" alt="" />
+
+      {/* Lớp lưu ảnh: hiện poster để NHẤN GIỮ → "Lưu ảnh" (iOS / Zalo / FB...) */}
+      {savedImageUrl && (
+        <div className="save-modal" onClick={() => setSavedImageUrl(null)}>
+          <div className="save-modal-inner" onClick={(e) => e.stopPropagation()}>
+            <div className="save-modal-hint">
+              Nhấn giữ vào ảnh → chọn <b>“Lưu ảnh”</b> / <b>“Thêm vào Ảnh”</b> để
+              tải về máy
+            </div>
+            <img src={savedImageUrl} alt="Poster NewWay Realty" />
+            <button
+              type="button"
+              className="save-modal-close"
+              onClick={() => setSavedImageUrl(null)}
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
