@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { toPng } from "html-to-image";
+import { domToPng } from "modern-screenshot";
 import Poster, { type PosterData } from "@/components/Poster";
 
 // Chạy trước khi browser vẽ trên client (tránh nháy); fallback useEffect khi SSR.
@@ -114,16 +114,33 @@ export default function Home() {
 
   async function renderBlob(): Promise<Blob> {
     const node = posterRef.current!;
-    const dataUrl = await toPng(node, {
-      width: 1449,
-      height: 2048,
-      pixelRatio: 1,
-      // KHÔNG cacheBust: nó thêm query string khiến ảnh glyph/canvas tải lại
-      // (canvas đã vẽ sẵn, không cần) và có thể chụp phải khung chưa kịp vẽ.
-      style: { transform: "scale(1)", transformOrigin: "top left" },
-    });
-    const r = await fetch(dataUrl);
-    return r.blob();
+    // iOS Safari dựng SAI vị trí các phần tử absolute nếu node đang có
+    // transform: scale() (poster thu nhỏ cho vừa khung). Khắc phục: tạm đặt
+    // transform THẬT của node về scale(1) (kích thước gốc 1449×2048) ngay trên
+    // DOM trước khi chụp, rồi khôi phục. Cha .poster-scale có overflow:hidden
+    // nên không nháy ra ngoài khung.
+    const prevTransform = node.style.transform;
+    const prevOrigin = node.style.transformOrigin;
+    node.style.transform = "scale(1)";
+    node.style.transformOrigin = "top left";
+    try {
+      // Chờ font (SVN Cera, Bahnschrift) load xong → chữ không bị đo sai/lệch.
+      if (typeof document !== "undefined" && document.fonts?.ready) {
+        await document.fonts.ready;
+      }
+      // modern-screenshot: ổn định hơn html-to-image trên Safari/iOS.
+      // scale:1 để KHÔNG nhân devicePixelRatio (iOS giới hạn kích thước canvas).
+      const dataUrl = await domToPng(node, {
+        width: 1449,
+        height: 2048,
+        scale: 1,
+      });
+      const r = await fetch(dataUrl);
+      return r.blob();
+    } finally {
+      node.style.transform = prevTransform;
+      node.style.transformOrigin = prevOrigin;
+    }
   }
 
   async function download() {
