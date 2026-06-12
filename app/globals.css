@@ -360,11 +360,13 @@ input[type="text"]:focus { border-color: #1f9b46; }
   .login-field {
     height: 52px;
     /* Thu hẹp gap/padding để placeholder dài "Nhập số CCCD của bạn" không bị cắt */
-    gap: 10px;
+    gap: 8px;
     padding: 0 12px;
   }
+  /* font-size 16px: NGƯỠNG để iOS Safari KHÔNG tự zoom khi focus ô input
+     (zoom làm lệch toàn bộ trang). KHÔNG hạ xuống dưới 16px. */
   .login-field input {
-    font-size: 14px;
+    font-size: 16px;
   }
   .login-btn {
     height: 52px;
