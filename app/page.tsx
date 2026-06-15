@@ -142,9 +142,40 @@ export default function Home() {
   function onPhoto(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => setPhotoUrl(reader.result as string);
-    reader.readAsDataURL(file);
+    setError(null);
+    // Giải mã ảnh -> vẽ vào canvas -> thu nhỏ -> xuất JPEG sạch. Khắc phục:
+    //  - Ảnh HEIC/HEIF (iPhone) hoặc định dạng lạ: <img> không hiện được dù
+    //    FileReader vẫn "thành công" → ở đây onerror sẽ báo lỗi rõ ràng.
+    //  - Ảnh quá lớn (vài chục MP): thu nhỏ để máy yếu không decode hỏng + ảnh
+    //    poster nhẹ hơn khi chụp/chia sẻ.
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const MAX = 1400;
+      const ratio = Math.min(1, MAX / Math.max(img.naturalWidth, img.naturalHeight));
+      const w = Math.max(1, Math.round(img.naturalWidth * ratio));
+      const h = Math.max(1, Math.round(img.naturalHeight * ratio));
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        setError("Trình duyệt không xử lý được ảnh, thử trình duyệt khác nhé.");
+        return;
+      }
+      ctx.drawImage(img, 0, 0, w, h);
+      try {
+        setPhotoUrl(canvas.toDataURL("image/jpeg", 0.92));
+      } catch {
+        setError("Ảnh không hợp lệ, hãy thử ảnh khác.");
+      }
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      setError("Không đọc được ảnh này (có thể là định dạng HEIC). Hãy chọn ảnh JPG/PNG.");
+    };
+    img.src = url;
   }
 
   async function renderDataUrl(): Promise<string> {

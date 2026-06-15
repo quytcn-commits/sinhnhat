@@ -55,9 +55,7 @@ const Poster = forwardRef<
       >
         {/* Ảnh chân dung — lấp đầy tới sát vành xanh (phủ qua vùng glass sáng), chỉ chừa vành ring */}
         <div className="photo-clip" style={box(736, 100, 598, 631)}>
-          {data.photoUrl ? (
-            <img src={data.photoUrl} alt="" crossOrigin="anonymous" />
-          ) : null}
+          {data.photoUrl ? <img src={data.photoUrl} alt="" /> : null}
         </div>
 
         {/* Khung tên (Rectangle 1) — overlay TRÊN ảnh, căn giữa tâm ảnh (x=1035) */}
