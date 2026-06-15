@@ -12,6 +12,8 @@ export type PosterData = {
   daysText: string;
   stats: { calls: string; meetings: string; deals: string; hours: string };
   photoUrl: string | null;
+  /** Khối: "bo" → nền poster BO (nhãn 4 ô khác); còn lại → nền KD mặc định */
+  khoi?: "bo" | "kd";
 };
 
 const FONT = '"SVN Cera", sans-serif';
@@ -41,10 +43,16 @@ const Poster = forwardRef<
 
   const statCenters = [709, 904, 1098, 1295];
   const statVals = [data.stats.calls, data.stats.meetings, data.stats.deals, data.stats.hours];
+  // Nền theo khối: BO dùng ảnh có 4 nhãn riêng; mặc định KD.
+  const bgUrl = data.khoi === "bo" ? "/poster-bg-bo.png" : "/poster-bg.png";
 
   return (
     <div className="poster-scale" ref={shellRef}>
-      <div className="poster" ref={ref} style={{ transform: `scale(${scale})` }}>
+      <div
+        className="poster"
+        ref={ref}
+        style={{ transform: `scale(${scale})`, backgroundImage: `url("${bgUrl}")` }}
+      >
         {/* Ảnh chân dung — lấp đầy tới sát vành xanh (phủ qua vùng glass sáng), chỉ chừa vành ring */}
         <div className="photo-clip" style={box(736, 100, 598, 631)}>
           {data.photoUrl ? (

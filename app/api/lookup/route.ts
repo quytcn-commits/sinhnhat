@@ -29,5 +29,6 @@ export async function POST(req: Request) {
     rank: emp.rank,
     daysText: formatVN(daysWith(emp)),
     stats: emp.stats,
+    khoi: emp.khoi ?? "kd",
   });
 }
