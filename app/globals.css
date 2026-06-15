@@ -604,6 +604,14 @@ input[type="text"]:focus { border-color: #1f9b46; }
   font-family: inherit;
   cursor: pointer;
 }
+/* Gợi ý kéo/chỉnh ảnh trong khung */
+.up-photo-hint {
+  color: #b9ddc4;
+  font-size: 11.5px;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 2px;
+}
 /* Gợi ý khi mở trong app Zalo/Facebook */
 .up-hint {
   color: #cfe7d6;
@@ -1057,6 +1065,13 @@ input[type="text"]:focus { border-color: #1f9b46; }
   border-radius: 50%;
 }
 .photo-clip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Khung ảnh có thể kéo/chỉnh ở màn kết quả: con trỏ + chặn cuộn-trang khi thao tác */
+.photo-clip.editable {
+  cursor: grab;
+  touch-action: none;
+}
+.photo-clip.editable:active { cursor: grabbing; }
+.photo-clip.editable img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; }
 
 /* Chữ xanh có gradient bóng nhẹ (sáng đỉnh -> đậm đáy) — khớp bản gốc */
 .g-green {

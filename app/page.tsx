@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { domToPng } from "modern-screenshot";
-import Poster, { type PosterData } from "@/components/Poster";
+import Poster, { type PosterData, type PhotoAdjust } from "@/components/Poster";
 
 // Chạy trước khi browser vẽ trên client (tránh nháy); fallback useEffect khi SSR.
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -33,6 +33,9 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<LookupResult | null>(null);
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  // Tỉ lệ ảnh + vị trí/zoom do người dùng kéo-chỉnh trong khung tròn.
+  const [photoRatio, setPhotoRatio] = useState(1);
+  const [photoAdj, setPhotoAdj] = useState<PhotoAdjust>({ scale: 1, x: 0, y: 0 });
   const [busy, setBusy] = useState(false);
   // Số lớn (BigNumber) vẽ bằng canvas ASYNC — chỉ cho Tải/Chia sẻ khi đã vẽ xong
   // để không chụp phải canvas trống.
@@ -184,6 +187,8 @@ export default function Home() {
       ctx.drawImage(img, 0, 0, w, h);
       try {
         setPhotoUrl(canvas.toDataURL("image/jpeg", 0.92));
+        setPhotoRatio(w / h); // tỉ lệ ảnh để Poster tính khung + giới hạn kéo
+        setPhotoAdj({ scale: 1, x: 0, y: 0 }); // ảnh mới → reset vị trí/zoom
       } catch {
         setError("Ảnh không hợp lệ, hãy thử ảnh khác.");
       }
@@ -471,6 +476,12 @@ export default function Home() {
               style={{ display: "none" }}
             />
 
+            {photoUrl && (
+              <div className="up-photo-hint">
+                Kéo ảnh trong khung để chỉnh vị trí · chụm 2 ngón / lăn chuột để phóng to
+              </div>
+            )}
+
             {error && <div className="login-error">{error}</div>}
 
             <button type="button" className="up-reset" onClick={reset}>
@@ -494,6 +505,9 @@ export default function Home() {
               ref={posterRef}
               data={{ ...info, photoUrl }}
               onNumberReady={handleNumberReady}
+              photoRatio={photoRatio}
+              adjust={photoAdj}
+              onAdjust={setPhotoAdj}
             />
           </div>
         </div>
