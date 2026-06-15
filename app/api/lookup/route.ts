@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { findByCccd, daysWith, formatVN, formatDate } from "@/lib/employees";
+import { findByCccd, daysWith, hoursWith, formatVN, formatDate } from "@/lib/employees";
 
 export async function POST(req: Request) {
   let body: { cccd?: string };
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     joinDateText: formatDate(emp.joinDate),
     rank: emp.rank,
     daysText: formatVN(daysWith(emp)),
-    stats: emp.stats,
+    stats: { ...emp.stats, hours: hoursWith(emp) },
     khoi: emp.khoi ?? "kd",
   });
 }

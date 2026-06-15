@@ -31,6 +31,14 @@ export function formatVN(n: number): string {
   return n.toLocaleString("vi-VN").replace(/,/g, ".");
 }
 
+/**
+ * Số giờ đồng hành = số ngày × 24 (đúng tỉ lệ dữ liệu gốc). Tự tính từ số ngày
+ * (cũng auto từ joinDate) nên luôn khớp, không dùng số cứng Excel.
+ */
+export function hoursWith(emp: Employee): string {
+  return formatVN(daysWith(emp) * 24);
+}
+
 /** Định dạng ngày: 2022-11-15 -> "15.11.2022" */
 export function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-");
