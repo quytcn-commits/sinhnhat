@@ -867,8 +867,10 @@ input[type="text"]:focus { border-color: #1f9b46; }
   .up-title {
     font-size: 12px;
   }
+  /* Ẩn dòng "Đã đồng hành … ngày – Gia nhập …" trên mobile: đã có sẵn trong
+     poster nên để thêm ở card gây thừa, rối. Desktop vẫn giữ. */
   .up-info {
-    font-size: 11px;
+    display: none;
   }
   .up-upload {
     height: 42px;

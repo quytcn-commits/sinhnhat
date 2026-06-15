@@ -201,12 +201,16 @@ export default function Home() {
       // Share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh"):
       // - iOS: BẮT BUỘC (vì không tải trực tiếp được)
       // - Mọi máy: khi bấm nút Chia sẻ
-      if ((ios || preferShare) && nav.canShare) {
+      // Cổng vào là navigator.share (KHÔNG bắt buộc canShare): vài WebView (Zalo
+      // iOS) có share nhưng thiếu canShare → vẫn thử share thật, rồi rơi xuống
+      // nhấn-giữ nếu lỗi. Khi có canShare thì dùng nó tiền-kiểm tra cho chắc.
+      if ((ios || preferShare) && typeof nav.share === "function") {
         const blob = await (await fetch(dataUrl)).blob();
         const file = new File([blob], name, { type: "image/png" });
-        if (nav.canShare({ files: [file] })) {
+        const shareData = { files: [file], title: "NewWay Realty" };
+        if (typeof nav.canShare !== "function" || nav.canShare({ files: [file] })) {
           try {
-            await navigator.share({ files: [file], title: "NewWay Realty" });
+            await navigator.share(shareData);
             return;
           } catch (e) {
             // Người dùng Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
@@ -215,14 +219,16 @@ export default function Home() {
         }
       }
 
-      // iOS không share được file (Zalo iOS) → hiện ảnh (DATA URL) để nhấn giữ
-      // "Lưu ảnh". CHỈ iOS — Android/desktop tải thẳng ở dưới.
-      if (ios) {
+      // Không share được qua Web Share API → hiện ảnh (DATA URL) để nhấn giữ:
+      // - iOS: LUÔN cần (iOS chặn tải file thẳng).
+      // - In-app Android (Zalo/FB...) khi bấm CHIA SẺ: WebView không có Web Share
+      //   → hiện ảnh để nhấn giữ → "Chia sẻ ảnh" (thay vì âm thầm tải về).
+      if (ios || (preferShare && isInAppBrowser())) {
         setSavedImageUrl(dataUrl);
         return;
       }
 
-      // Desktop + Android (kể cả Android Zalo): <a download> hoạt động → tải thẳng.
+      // Còn lại (Tải xuống trên Android, mọi nút desktop): <a download> → tải thẳng.
       const a = document.createElement("a");
       a.href = dataUrl;
       a.download = name;
@@ -484,13 +490,13 @@ export default function Home() {
         <div className="save-modal" onClick={() => setSavedImageUrl(null)}>
           <div className="save-modal-inner" onClick={(e) => e.stopPropagation()}>
             <div className="save-modal-hint">
-              Nhấn giữ vào ảnh → chọn <b>“Lưu ảnh”</b> / <b>“Thêm vào Ảnh”</b>
+              Nhấn giữ vào ảnh → chọn <b>“Chia sẻ ảnh”</b> / <b>“Lưu ảnh”</b>
             </div>
             <img src={savedImageUrl} alt="Poster NewWay Realty" />
             {inApp && (
               <div className="save-modal-note">
-                Lưu không được? Bấm <b>“⋯”</b> góc trên → <b>“Mở bằng trình duyệt”</b>{" "}
-                (Safari) rồi tải lại.
+                Chưa được? Bấm <b>“⋯”</b> góc trên → <b>“Mở bằng trình duyệt”</b>{" "}
+                (Safari / Chrome) rồi thử lại.
               </div>
             )}
             <button
