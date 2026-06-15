@@ -983,6 +983,44 @@ input[type="text"]:focus { border-color: #1f9b46; }
 .row2 { display: flex; gap: 10px; }
 .row2 > div { flex: 1; }
 
+/* ===== Admin theo dõi sự kiện ===== */
+.ev-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ev-card {
+  background: #ffffff; border: 1px solid #e2ece5; border-radius: 12px;
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 2px;
+}
+.ev-card b { font-size: 26px; color: #0c7a2c; line-height: 1.1; }
+.ev-card span { font-size: 12px; color: #6b8378; }
+.ev-card-dev {
+  grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: center;
+}
+.ev-card-dev span { font-size: 13.5px; color: #2c4a39; }
+.ev-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ev-filters input[type="text"] { flex: 1; min-width: 150px; }
+.ev-filters input[type="date"], .ev-filters select {
+  padding: 9px 10px; border-radius: 8px; border: 1px solid #cdddd2; font-family: inherit; font-size: 14px;
+}
+.ev-table-wrap { margin-top: 10px; overflow-x: auto; border: 1px solid #e2ece5; border-radius: 10px; }
+.ev-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+.ev-table th, .ev-table td { padding: 9px 10px; text-align: left; border-bottom: 1px solid #eef4f0; white-space: nowrap; }
+.ev-table th { background: #f3f9f5; color: #2c4a39; font-weight: 700; font-size: 12px; position: sticky; top: 0; }
+.ev-table tr:last-child td { border-bottom: none; }
+.ev-time { color: #46614f; }
+.ev-mono { font-family: monospace; color: #6b8378; }
+.ev-dev { color: #46614f; }
+.ev-tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.ev-created { background: #eaf4ec; color: #0c7a2c; }
+.ev-download { background: #e6f0fb; color: #1565c0; }
+.ev-share { background: #fdf0e6; color: #c2701a; }
+@media (max-width: 560px) {
+  .ev-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ===== Poster (kích thước thật 1449 x 2048, scale theo container) ===== */
 .poster-shell { width: 100%; }
 .poster-scale {

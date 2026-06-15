@@ -62,6 +62,7 @@ export default function Admin() {
       <div className="admin-nav">
         <a href="/admin" className="active">Import Excel</a>
         <a href="/admin/employees">Danh sách</a>
+        <a href="/admin/events">Sự kiện</a>
       </div>
 
       <div className="card">

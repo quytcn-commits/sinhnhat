@@ -134,6 +134,7 @@ export default function EmployeesAdmin() {
       <div className="admin-nav">
         <a href="/admin">Import Excel</a>
         <a href="/admin/employees" className="active">Danh sách</a>
+        <a href="/admin/events">Sự kiện</a>
       </div>
 
       <div className="card">

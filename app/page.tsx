@@ -118,6 +118,22 @@ export default function Home() {
   const posterRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
+  // Ghi nhận sự kiện (tham gia/tải/chia sẻ) để quản trị theo dõi. Fire-and-forget,
+  // không chặn UI; keepalive để gửi xong kể cả khi trang chuyển/đóng.
+  function track(action: "created" | "download" | "share", outcome: string) {
+    if (!cccd) return;
+    try {
+      fetch("/api/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cccd, action, outcome }),
+        keepalive: true,
+      }).catch(() => {});
+    } catch {
+      /* bỏ qua lỗi log */
+    }
+  }
+
   async function lookup(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
@@ -131,6 +147,7 @@ export default function Home() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Có lỗi xảy ra");
       setInfo(data);
+      track("created", "lookup");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Có lỗi xảy ra");
       setInfo(null);
@@ -228,6 +245,7 @@ export default function Home() {
       };
       // Yếu tố quyết định là iOS (vì iOS BỎ QUA <a download>), không phải in-app.
       const ios = isIOSDevice();
+      const action = preferShare ? "share" : "download";
 
       // Share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh"):
       // - iOS: BẮT BUỘC (vì không tải trực tiếp được)
@@ -242,10 +260,14 @@ export default function Home() {
         if (typeof nav.canShare !== "function" || nav.canShare({ files: [file] })) {
           try {
             await navigator.share(shareData);
+            track(action, "shared");
             return;
           } catch (e) {
             // Người dùng Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
-            if ((e as Error)?.name === "AbortError") return;
+            if ((e as Error)?.name === "AbortError") {
+              track(action, "cancelled");
+              return;
+            }
           }
         }
       }
@@ -256,6 +278,7 @@ export default function Home() {
       //   → hiện ảnh để nhấn giữ → "Chia sẻ ảnh" (thay vì âm thầm tải về).
       if (ios || (preferShare && isInAppBrowser())) {
         setSavedImageUrl(dataUrl);
+        track(action, "shown");
         return;
       }
 
@@ -264,8 +287,10 @@ export default function Home() {
       a.href = dataUrl;
       a.download = name;
       a.click();
+      track(action, "downloaded");
     } catch {
       setError("Không tạo được ảnh, thử lại nhé");
+      track(preferShare ? "share" : "download", "error");
     } finally {
       setBusy(false);
     }
