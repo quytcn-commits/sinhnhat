@@ -11,7 +11,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "027093001008",
@@ -25,7 +25,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "024090003950",
@@ -75,20 +75,6 @@
   "title": "CHUYÊN VIÊN",
   "joinDate": "2021-07-01",
   "rank": "HUYỀN THOẠI",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
-  "cccd": "001093022152",
-  "fullName": "ĐỖ VĂN THỤ",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-03-03",
-  "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -200,20 +186,6 @@
   "fullName": "NGUYỄN CHÍ HIẾU",
   "title": "CHUYÊN VIÊN",
   "joinDate": "2024-07-23",
-  "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
-  "cccd": "001197028287",
-  "fullName": "NGUYỄN KHÁNH LINH",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2024-07-26",
   "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
@@ -410,7 +382,7 @@
   "fullName": "ĐÀO THỊ MỸ LINH",
   "title": "CHUYÊN VIÊN",
   "joinDate": "2025-06-13",
-  "rank": "CHIẾN BINH",
+  "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -508,20 +480,6 @@
   "fullName": "TRỊNH HỒNG VÂN",
   "title": "CHUYÊN VIÊN",
   "joinDate": "2025-09-05",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
-  "cccd": "001198020653",
-  "fullName": "TRẦN THỊ HÀ",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-09-12",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -802,7 +760,7 @@
   "fullName": "ĐÀM QUANG VINH",
   "title": "CHUYÊN VIÊN",
   "joinDate": "2025-06-16",
-  "rank": "CHIẾN BINH",
+  "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -823,7 +781,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "038192001218",
@@ -837,7 +795,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "033302001110",
@@ -893,7 +851,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "079088007673",
@@ -907,7 +865,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "025300002304",
@@ -1047,7 +1005,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "038184011395",
@@ -1079,7 +1037,7 @@
  },
  {
   "cccd": "079198012977",
-  "fullName": "NGUYỄN THỊ THANH THÚY",
+  "fullName": "NGUYỄN THỊ THANH THUÝ",
   "title": "CHUYÊN VIÊN",
   "joinDate": "2025-11-24",
   "rank": "CHIẾN BINH",
@@ -1120,20 +1078,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "037192002313",
-  "fullName": "PHẠM THỊ MINH HUẾ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2023-07-03",
-  "rank": "HUYỀN THOẠI",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001188019388",
   "fullName": "TRẦN ĐỖ THU HÀ",
   "title": "PHÓ TỔNG GIÁM ĐỐC",
@@ -1145,7 +1089,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "038093011458",
@@ -1173,7 +1117,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001084001230",
@@ -1456,20 +1400,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "037182009056",
-  "fullName": "NGUYỄN THỊ MAI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2021-10-25",
-  "rank": "HUYỀN THOẠI",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "038203015974",
   "fullName": "PHẠM VĂN CHUYÊN",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -1570,7 +1500,7 @@
  {
   "cccd": "001185024298",
   "fullName": "NGUYỄN HUYỀN THƯƠNG",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "title": "TRƯỞNG PHÒNG PTĐT",
   "joinDate": "2022-04-15",
   "rank": "HUYỀN THOẠI",
   "stats": {
@@ -1666,20 +1596,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "038091009093",
-  "fullName": "ĐẶNG HOÀNG GIAO",
-  "title": "GIÁM ĐỐC KHỐI",
-  "joinDate": "2025-11-11",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "022089014649",
   "fullName": "NGUYỄN DUY HƯNG",
   "title": "GIÁM ĐỐC KINH DOANH",
@@ -1705,12 +1621,12 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "030096010580",
   "fullName": "NGUYỄN VĂN NGHĨA",
-  "title": "NHÂN VIÊN",
+  "title": "GIÁM ĐỐC KINH DOANH",
   "joinDate": "2023-03-01",
   "rank": "HUYỀN THOẠI",
   "stats": {
@@ -1719,7 +1635,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001091001049",
@@ -2538,7 +2454,7 @@
   "fullName": "NGUYỄN CÔNG TIẾN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2024-06-17",
-  "rank": "TINH ANH",
+  "rank": "HUYỀN THOẠI",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -2692,7 +2608,7 @@
   "fullName": "TRẦN THỊ KIM TRANG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2024-06-17",
-  "rank": "TINH ANH",
+  "rank": "HUYỀN THOẠI",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -2706,7 +2622,7 @@
   "fullName": "NGUYỄN VĂN TUYỀN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2024-06-17",
-  "rank": "TINH ANH",
+  "rank": "HUYỀN THOẠI",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -2769,7 +2685,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "030195015100",
@@ -3178,6 +3094,20 @@
   "khoi": "kd"
  },
  {
+  "cccd": "026182001455",
+  "fullName": "NGUYỄN THỊ HUỆ",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2025-03-17",
+  "rank": "TINH ANH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
   "cccd": "001091052839",
   "fullName": "BÙI ĐỨC KIÊN",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -3196,20 +3126,6 @@
   "fullName": "LÊ THỊ CẨM TRÀ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-04-01",
-  "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001090003350",
-  "fullName": "NGUYỄN THANH TÙNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-04-03",
   "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
@@ -3252,20 +3168,6 @@
   "fullName": "MAI QUỲNH CHI",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-05-05",
-  "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001189009138",
-  "fullName": "CHU THỊ CÚC",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-05-06",
   "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
@@ -3374,20 +3276,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "040193000153",
-  "fullName": "NGUYỄN THỊ HUYỀN TRANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-05-26",
-  "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "052088010152",
   "fullName": "ĐINH VĂN THI",
   "title": "GIÁM ĐỐC KINH DOANH",
@@ -3469,7 +3357,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001302002635",
@@ -3766,20 +3654,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "049082013800",
-  "fullName": "LÊ ĐÌNH VIỆT AN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-07-03",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001089048690",
   "fullName": "VŨ ANH TUẤN",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
@@ -4004,20 +3878,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001190001102",
-  "fullName": "NGÔ THỊ DIỆP",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-07-21",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001091009149",
   "fullName": "ĐỖ CÔNG TRIỂN",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -4071,7 +3931,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "036200001492",
@@ -4424,20 +4284,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "033096004881",
-  "fullName": "HOÀNG ĐÌNH TỨ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-09-17",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "037300001066",
   "fullName": "ĐỒNG THỊ KIỀU OANH",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -4690,20 +4536,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001193026819",
-  "fullName": "NGUYỄN KIỀU OANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-05",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "020200005738",
   "fullName": "LA VĂN HƯNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -4720,20 +4552,6 @@
  {
   "cccd": "027194000038",
   "fullName": "NGHIÊM THỊ HẢI LINH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-01",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "030199003503",
-  "fullName": "ĐOÀN THỊ THIÊN PHƯƠNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-11-01",
   "rank": "CHIẾN BINH",
@@ -4816,52 +4634,10 @@
   "khoi": "kd"
  },
  {
-  "cccd": "031090008479",
-  "fullName": "PHẠM HÙNG MẠNH",
-  "title": "GIÁM ĐỐC KINH DOANH",
-  "joinDate": "2025-11-17",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "002086000032",
   "fullName": "NGUYỄN VĂN CƯỜNG",
   "title": "GIÁM ĐỐC KINH DOANH",
   "joinDate": "2025-11-15",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "036089000464",
-  "fullName": "HOÀNG DUY QUANG",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
-  "joinDate": "2025-11-15",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001198014581",
-  "fullName": "NGUYỄN DIỆU LINH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-17",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -4886,53 +4662,11 @@
   "khoi": "kd"
  },
  {
-  "cccd": "033193001043",
-  "fullName": "NGUYỄN THỊ THẢO",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-17",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "034200002330",
-  "fullName": "PHẠM NGỌC CƯỜNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-17",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "026096003478",
   "fullName": "HOÀNG MINH CÔNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2024-12-01",
   "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001092008220",
-  "fullName": "PHẠM ĐỨC LUÂN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-17",
-  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -4984,20 +4718,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "030186000157",
-  "fullName": "VŨ THỊ THU HƯƠNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-24",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001200016972",
   "fullName": "NGUYỄN TRỌNG KHẢI",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -5015,20 +4735,6 @@
   "cccd": "022189002069",
   "fullName": "NGUYỄN THÁI HÀ",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
-  "joinDate": "2025-11-24",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001093006119",
-  "fullName": "NGUYỄN HOÀNG TUẤN ANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-11-24",
   "rank": "CHIẾN BINH",
   "stats": {
@@ -5289,7 +4995,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "035097002962",
@@ -5308,7 +5014,7 @@
  {
   "cccd": "058091004320",
   "fullName": "VÕ TRƯỜNG CHINH",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2023-06-12",
   "rank": "HUYỀN THOẠI",
   "stats": {
@@ -5321,7 +5027,7 @@
  },
  {
   "cccd": "075189006699",
-  "fullName": "VÕ THANH TRÂM",
+  "fullName": "VÕ THANH TRÂM",
   "title": "GIÁM ĐỐC DỰ ÁN",
   "joinDate": "2023-05-18",
   "rank": "HUYỀN THOẠI",
@@ -5331,7 +5037,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "089096014158",
@@ -5546,7 +5252,7 @@
  {
   "cccd": "054094003507",
   "fullName": "NGUYỄN PHI HÙNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-04-01",
   "rank": "TINH ANH",
   "stats": {
@@ -5625,7 +5331,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "038183009985",
@@ -5667,7 +5373,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "086195005908",
@@ -5681,12 +5387,26 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "066199011557",
   "fullName": "LÊ THỊ THÚY NGA",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "joinDate": "2025-05-23",
+  "rank": "TINH ANH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "042094005132",
+  "fullName": "VÕ TRIỀU DƯƠNG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-05-23",
   "rank": "TINH ANH",
   "stats": {
@@ -5715,20 +5435,6 @@
   "cccd": "048194006456",
   "fullName": "MẠC TƯỜNG HUYỀN GIANG",
   "title": "GIÁM ĐỐC DỰ ÁN",
-  "joinDate": "2025-05-23",
-  "rank": "TINH ANH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "072092009260",
-  "fullName": "LÝ VẠN KIM",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-05-23",
   "rank": "TINH ANH",
   "stats": {
@@ -5798,7 +5504,7 @@
  {
   "cccd": "095090012409",
   "fullName": "NGUYỄN HÀNG QUỐC MINH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-06-06",
   "rank": "TINH ANH",
   "stats": {
@@ -5842,7 +5548,7 @@
   "fullName": "NGUYỄN HUỲNH MAI XUÂN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-06-16",
-  "rank": "CHIẾN BINH",
+  "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -5868,36 +5574,8 @@
  {
   "cccd": "060094015379",
   "fullName": "TRẦN MINH TIẾN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-06-24",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "054099006327",
-  "fullName": "ĐỖ VĂN KHẢ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-06-25",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "079181020289",
-  "fullName": "CHUNG THU PHỤNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-08-11",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -5910,20 +5588,6 @@
  {
   "cccd": "079303036492",
   "fullName": "NGUYỄN THỊ ANH THƯ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-07-01",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "045098008168",
-  "fullName": "TRƯƠNG QUANG LÂM",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-07-01",
   "rank": "CHIẾN BINH",
@@ -5954,20 +5618,6 @@
   "fullName": "NGUYỄN TIẾN THÀNH",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-08-01",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "072088010605",
-  "fullName": "NGUYỄN DUY TÂN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-08-04",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -6076,34 +5726,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079080012045",
-  "fullName": "PHẠM HỒNG ÂN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-08-25",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "091089010250",
-  "fullName": "PHẠM VĂN KHỞI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-08-25",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "067095003315",
   "fullName": "NÔNG TỨ LINH",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -6188,20 +5810,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "027193010014",
-  "fullName": "TRƯƠNG THỊ HÀ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-09-18",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "054097002920",
   "fullName": "NGUYỄN HUY",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -6232,21 +5840,7 @@
  {
   "cccd": "096087003105",
   "fullName": "TRẦN TRƯỜNG SƠN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-09-22",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "064098006108",
-  "fullName": "NGUYỄN QUANG DANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-09-22",
   "rank": "CHIẾN BINH",
   "stats": {
@@ -6524,20 +6118,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079090035482",
-  "fullName": "PHÙNG HOÁN GIANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-03",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "080191009462",
   "fullName": "TRẦN NGỌC CƯ",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -6556,20 +6136,6 @@
   "fullName": "TRẦN THỊ THÙY TRÂM",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-11-03",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "068186006626",
-  "fullName": "NGUYỄN THỊ NHƯ NHUNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-04",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -6664,8 +6230,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079095008900",
-  "fullName": "BÙI THANH NAM",
+  "cccd": "042193008987",
+  "fullName": "HỒ THỊ THU HÀ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-11-20",
   "rank": "CHIẾN BINH",
@@ -6678,10 +6244,10 @@
   "khoi": "kd"
  },
  {
-  "cccd": "042193008987",
-  "fullName": "HỒ THỊ THU HÀ",
+  "cccd": "066189002499",
+  "fullName": "VY THỊ NGÀ",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-20",
+  "joinDate": "2025-11-24",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -6738,20 +6304,6 @@
   "fullName": "NGUYỄN THỊ NGỌC LINH",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-11-25",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "068204006957",
-  "fullName": "TRẦN QUÍ AN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-01",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -6844,20 +6396,6 @@
    "hours": ""
   },
   "khoi": "bo"
- },
- {
-  "cccd": "033184010742",
-  "fullName": "BÙI THỊ BÁCH DIỆP",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-11-06",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
  },
  {
   "cccd": "096094006475",
@@ -7109,7 +6647,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "bld"
  },
  {
   "cccd": "064304012582",
@@ -7140,36 +6678,8 @@
   "khoi": "bo"
  },
  {
-  "cccd": "064302008787",
-  "fullName": "TRẦN NGỌC HÂN",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-12-08",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
   "cccd": "042200002896",
   "fullName": "TRƯƠNG CÔNG MINH TUYỀN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-08",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "080698006434",
-  "fullName": "PHẠM MINH KHÁNH",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-08",
   "rank": "CHIẾN BINH",
@@ -7238,34 +6748,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "034094018382",
-  "fullName": "ĐỖ DUY KHANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-10",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "079095016485",
-  "fullName": "TRẦN CHÍ THÀNH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-08",
-  "rank": "CHIẾN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "091196010321",
   "fullName": "VÕ HỒNG NGỌC",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -7284,21 +6766,7 @@
   "fullName": "MAI THỊ HƯƠNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "046080000165",
-  "fullName": "NGUYỄN NGỌC LÂM",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7312,7 +6780,7 @@
   "fullName": "VŨ TIẾN ĐẠT",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7333,7 +6801,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "026091012958",
@@ -7368,7 +6836,7 @@
   "fullName": "VŨ THỊ CÚC",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7382,7 +6850,7 @@
   "fullName": "VÕ NGỌC ANH THƯ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7396,7 +6864,7 @@
   "fullName": "PHẠM VŨ PHÚ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7410,7 +6878,7 @@
   "fullName": "ĐOÀN VĂN TUYỂN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7424,7 +6892,7 @@
   "fullName": "TRẦN LÊ BẢO",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-15",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7466,7 +6934,7 @@
   "fullName": "ĐOÀN THỊ KHÁNH LINH",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-17",
-  "rank": "TÂN BINH",
+  "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -7494,20 +6962,6 @@
   "fullName": "HOÀNG VĂN HƯNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2025-12-24",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001071050631",
-  "fullName": "NGUYỄN TRƯỜNG GIANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-22",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -7560,20 +7014,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079190012953",
-  "fullName": "PHẠM NGỌC MINH CHÂU",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-23",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "087194015088",
   "fullName": "DƯƠNG THỊ HỒNG NHUNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -7602,36 +7042,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "091196002758",
-  "fullName": "NGUYỄN THỊ TUYẾT NHI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-05",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "015086000236",
   "fullName": "TRẦN ĐỨC THỌ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-05",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "079182007258",
-  "fullName": "TRẦN THỊ THANH LOAN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-01-05",
   "rank": "TÂN BINH",
@@ -7672,20 +7084,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001089012463",
-  "fullName": "NGUYỄN PHỒN VINH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-12-22",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "014179010339",
   "fullName": "HOÀNG THÁI GIANG",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -7716,20 +7114,6 @@
  {
   "cccd": "008189008873",
   "fullName": "VŨ THU HỒNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-05",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001302005225",
-  "fullName": "NGUYỄN DUY HỒNG HÀ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-01-05",
   "rank": "TÂN BINH",
@@ -7826,20 +7210,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "091190013525",
-  "fullName": "NGUYỄN NGỌC BẠCH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-07",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "066094009715",
   "fullName": "BÀNH ĐỨC THIÊN",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -7872,20 +7242,6 @@
   "fullName": "NGUYỄN HẠNH NGÂN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-01-06",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001097024341",
-  "fullName": "BÙI ĐỨC THÀNH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-12",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -8011,20 +7367,6 @@
   "cccd": "048083007004",
   "fullName": "HUỲNH VĂN SƠN",
   "title": "GIÁM ĐỐC KINH DOANH",
-  "joinDate": "2026-01-14",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "062080003548",
-  "fullName": "TRẦN HUỲNH NGUYÊN MINH",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2026-01-14",
   "rank": "TÂN BINH",
   "stats": {
@@ -8190,34 +7532,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "017185000200",
-  "fullName": "NGUYỄN THỊ NHƯ MAI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-26",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "030190024059",
-  "fullName": "TỪ THỊ KIM OANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-01-26",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "025191007935",
   "fullName": "BÙI HOÀNG THIỆN",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
@@ -8260,50 +7574,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "036201005914",
-  "fullName": "VŨ NGỌC QUÂN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-02-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "060095011307",
-  "fullName": "NGUYỄN LINH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-02-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "031186002304",
   "fullName": "VŨ THỊ NGỌC ÁNH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-02-03",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031187010090",
-  "fullName": "VŨ THỊ NGỌC HÀ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-02-03",
   "rank": "TÂN BINH",
@@ -8342,20 +7614,6 @@
    "hours": ""
   },
   "khoi": "bo"
- },
- {
-  "cccd": "054073000016",
-  "fullName": "TRẦN PHƯỚC HẢI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-02-09",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
  },
  {
   "cccd": "079195027726",
@@ -8430,34 +7688,6 @@
  {
   "cccd": "064194013866",
   "fullName": "NGUYỄN THỊ THẢO NGUYÊN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "080201006206",
-  "fullName": "LÊ TRẦN PHƯƠNG PHÚC",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031088008627",
-  "fullName": "TRẦN DUY LONG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-03-02",
   "rank": "TÂN BINH",
@@ -8596,36 +7826,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "017200006758",
-  "fullName": "ĐINH ANH TÚ",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
-  "joinDate": "2026-03-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031199014548",
-  "fullName": "TRỊNH VŨ THUỲ LINH",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
-  "joinDate": "2026-03-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "089093003586",
-  "fullName": "CHÂU KHẮC HUY",
+  "fullName": "CHU KHẮC HUY",
   "title": "TRƯỞNG NHÓM",
   "joinDate": "2026-03-02",
   "rank": "TÂN BINH",
@@ -8666,10 +7868,10 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079302012982",
-  "fullName": "TRƯƠNG NGỌC GIÀU",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2026-01-28",
+  "cccd": "051090010213",
+  "fullName": "NGÔ QUỐC HUÂN",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "joinDate": "2026-05-25",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -8677,7 +7879,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "bo"
+  "khoi": "kd"
  },
  {
   "cccd": "019087011523",
@@ -8820,20 +8022,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001090052049",
-  "fullName": "HOÀNG XUÂN HUY",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-09",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001179003792",
   "fullName": "PHÙNG THỊ LAN ANH",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -8866,20 +8054,6 @@
   "fullName": "NHỮ SƠN TRƯỜNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-03-09",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "051203013727",
-  "fullName": "NGUYỄN MINH QUANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-10",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -8992,20 +8166,6 @@
   "fullName": "TRẦN HUY THÔNG",
   "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2026-03-03",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031191004708",
-  "fullName": "LÊ THỊ MAI LIÊN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-09-03",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -9338,20 +8498,6 @@
   "khoi": "bo"
  },
  {
-  "cccd": "086304000066",
-  "fullName": "NGÔ NGUYỄN TÙNG CHI",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-16",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "033191014555",
   "fullName": "PHAN THỊ THOA",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -9382,7 +8528,7 @@
  {
   "cccd": "001200021363",
   "fullName": "NGUYỄN VĂN LÂM",
-  "title": "TRỢ LÝ",
+  "title": "GIÁM ĐỐC DỰ ÁN",
   "joinDate": "2026-03-17",
   "rank": "TÂN BINH",
   "stats": {
@@ -9391,7 +8537,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "038090057210",
@@ -9496,34 +8642,6 @@
   "fullName": "LƯƠNG CAO ANH TUẤN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-03-23",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "038197027261",
-  "fullName": "NGUYỄN THỊ KHÁNH HUYỀN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-25",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "054189004446",
-  "fullName": "THÂN THỊ NGA",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-03-20",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -9674,50 +8792,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "070199001963",
-  "fullName": "HUỲNH KIM TUYỀN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "075192009983",
   "fullName": "NGUYỄN THỊ NGỌC HIỆP",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "038191004754",
-  "fullName": "HOÀNG THU QUỲNH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001184015459",
-  "fullName": "BÙI TUYẾT NHUNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-01",
   "rank": "TÂN BINH",
@@ -9786,36 +8862,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "036089020097",
-  "fullName": "PHẠM QUANG KHÁNH",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
-  "joinDate": "2026-05-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "040194012602",
   "fullName": "NGUYỄN THỊ NGÂN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "033197012569",
-  "fullName": "NGUYỄN THỊ THU",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-01",
   "rank": "TÂN BINH",
@@ -9912,50 +8960,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "079092007287",
-  "fullName": "TẠ HOÀI NAM",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "025200000726",
-  "fullName": "NGÔ HOÀNG HIẾU",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-06",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "022200001174",
   "fullName": "PHẠM DUY TRƯỜNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-06",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "036088004566",
-  "fullName": "LÊ VĂN TÂM",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-06",
   "rank": "TÂN BINH",
@@ -10010,48 +9016,6 @@
   "khoi": "bo"
  },
  {
-  "cccd": "034090001351",
-  "fullName": "TÔ CAO NGUYÊN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "091096008608",
-  "fullName": "TRẦN NGUYỄN THÀNH LONG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-02",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "075094012166",
-  "fullName": "NGUYỄN ĐÌNH TRÍ",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-08",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "040303002601",
   "fullName": "LÊ THỊ MINH NGỌC",
   "title": "CHUYÊN VIÊN",
@@ -10082,20 +9046,6 @@
  {
   "cccd": "031185008892",
   "fullName": "NGUYỄN THỊ XUYÊN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-06",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "089197010691",
-  "fullName": "NGUYỄN THỊ THANH THẢO",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-06",
   "rank": "TÂN BINH",
@@ -10332,20 +9282,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001186001863",
-  "fullName": "TRỊNH THỊ QUỲNH ANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "031097001170",
   "fullName": "NGUYỄN XUÂN ĐOAN",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -10528,36 +9464,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "031303000822",
-  "fullName": "NGUYỄN THUỲ TRANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "036201002368",
   "fullName": "ĐOÀN HẢI DƯƠNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031303009213",
-  "fullName": "PHẠM THU UYÊN",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-13",
   "rank": "TÂN BINH",
@@ -10626,20 +9534,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "026097007943",
-  "fullName": "NGUYỄN MINH TUẤN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "030094007062",
   "fullName": "PHẠM VĂN CÔNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -10656,20 +9550,6 @@
  {
   "cccd": "036091016120",
   "fullName": "LƯƠNG TUẤN ANH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "036200002856",
-  "fullName": "TRỊNH ĐỨC MINH",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-13",
   "rank": "TÂN BINH",
@@ -10808,20 +9688,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "027193012753",
-  "fullName": "VŨ THỊ HOA",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "010197000065",
   "fullName": "NGUYỄN THỊ THƯƠNG",
   "title": "CHUYÊN VIÊN",
@@ -10864,36 +9730,8 @@
   "khoi": "kd"
  },
  {
-  "cccd": "077201006652",
-  "fullName": "TRẦN ANH ĐỨC",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "015083001017",
   "fullName": "NGUYỄN THU MÁT",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "022196002680",
-  "fullName": "NGÔ THANH THẢO",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-20",
   "rank": "TÂN BINH",
@@ -11046,20 +9884,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "025194000056",
-  "fullName": "NGUYỄN THỊ THU HIỀN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "025306002257",
   "fullName": "NGUYỄN HOÀNG NGỌC ANH",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -11113,7 +9937,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001080048172",
@@ -11188,7 +10012,7 @@
  {
   "cccd": "015194000171",
   "fullName": "TRẦN THỊ PHƯƠNG NGÂN",
-  "title": "GIÁM ĐỐC KHỐI",
+  "title": "GIÁM ĐỐC DỰ ÁN",
   "joinDate": "2026-04-20",
   "rank": "TÂN BINH",
   "stats": {
@@ -11197,7 +10021,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "025188014793",
@@ -11620,20 +10444,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001187009422",
-  "fullName": "NGUYỄN THỊ NGA",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001196025649",
   "fullName": "NGUYỄN THỊ HOA",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -11662,37 +10472,9 @@
   "khoi": "kd"
  },
  {
-  "cccd": "027180000323",
-  "fullName": "ĐÀO THỊ MINH NGUYỆT",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001304028317",
-  "fullName": "PHÙNG THU HIỀN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001191052769",
   "fullName": "CHỬ MINH ANH",
-  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-04-20",
   "rank": "TÂN BINH",
   "stats": {
@@ -11750,6 +10532,20 @@
   "fullName": "NGUYỄN NHƯ HẢI",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-04",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "036195019697",
+  "fullName": "TRẦN THỊ TRANG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-04-25",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -11897,7 +10693,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "036088000666",
@@ -11956,25 +10752,11 @@
   "khoi": "kd"
  },
  {
-  "cccd": "022200001853",
-  "fullName": "TRƯƠNG LÊ TRƯỜNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-04",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "034097002436",
   "fullName": "PHẠM VĂN ĐẠI",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-05-04",
-  "rank": "TINH ANH",
+  "joinDate": "2026-05-04",
+  "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -12098,7 +10880,7 @@
  {
   "cccd": "075304000758",
   "fullName": "LÊ NGUYỄN HOÀI PHƯƠNG",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN",
   "joinDate": "2026-04-15",
   "rank": "TÂN BINH",
   "stats": {
@@ -12141,8 +10923,8 @@
   "cccd": "022198010816",
   "fullName": "LƯU PHƯƠNG THẢO",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2025-05-04",
-  "rank": "TINH ANH",
+  "joinDate": "2026-05-04",
+  "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -12268,7 +11050,7 @@
   "fullName": "ĐOÀN CHIẾN THẮNG",
   "title": "NHÂN VIÊN",
   "joinDate": "2025-06-13",
-  "rank": "CHIẾN BINH",
+  "rank": "TINH ANH",
   "stats": {
    "calls": "5.000+",
    "meetings": "500+",
@@ -12322,7 +11104,7 @@
  {
   "cccd": "030095002094",
   "fullName": "ĐINH VĂN TỰ",
-  "title": "NHÂN VIÊN",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
   "joinDate": "2026-05-02",
   "rank": "TÂN BINH",
   "stats": {
@@ -12336,7 +11118,7 @@
  {
   "cccd": "030182001067",
   "fullName": "HOÀNG THỊ DẬU",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
@@ -12350,22 +11132,8 @@
  {
   "cccd": "022182002001",
   "fullName": "LÊ THỊ THANH TRINH",
-  "title": "NHÂN VIÊN",
-  "joinDate": "2026-05-11",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001188011153",
-  "fullName": "LÊ HUYỀN TRANG",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-20",
+  "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -12378,7 +11146,7 @@
  {
   "cccd": "008188012142",
   "fullName": "NGUYỄN THỊ BÍCH NGỌC",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
@@ -12560,7 +11328,7 @@
  {
   "cccd": "014186008909",
   "fullName": "LÊ THỊ THU TRANG",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
@@ -12600,37 +11368,9 @@
   "khoi": "kd"
  },
  {
-  "cccd": "036095008811",
-  "fullName": "TRẦN VĂN TUẤN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-11",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "017200000278",
-  "fullName": "NGUYỄN THÀNH HƯNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-11",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "001196037122",
   "fullName": "ĐÀO PHƯƠNG THẢO",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
@@ -12645,34 +11385,6 @@
   "cccd": "064194012907",
   "fullName": "HUỲNH THỊ MỸ TRINH",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-11",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001095011567",
-  "fullName": "NGHIÊM VĂN LỘC",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-11",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "031191008977",
-  "fullName": "NGUYỄN THỊ THÚY",
-  "title": "NHÂN VIÊN",
   "joinDate": "2026-05-11",
   "rank": "TÂN BINH",
   "stats": {
@@ -12700,7 +11412,7 @@
  {
   "cccd": "056195001060",
   "fullName": "LÊ THỊ HUYỀN TRANG",
-  "title": "GIÁM ĐỐC KINH DOANH",
+  "title": "GIÁM ĐỐC PTĐT",
   "joinDate": "2026-05-25",
   "rank": "TÂN BINH",
   "stats": {
@@ -12716,20 +11428,6 @@
   "fullName": "BÙI TIẾN DŨNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "001092005985",
-  "fullName": "ĐINH VIỆT THẮNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-12",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -12782,20 +11480,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "060091013023",
-  "fullName": "TRẦN HỮU TOÀN",
-  "title": "NHÂN VIÊN",
-  "joinDate": "2026-05-13",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
   "cccd": "096190005964",
   "fullName": "ĐOÀN BÍCH NI",
   "title": "NHÂN VIÊN",
@@ -12821,12 +11505,12 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "034189008698",
   "fullName": "NGUYỄN THỊ THƯƠNG",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-16",
   "rank": "TÂN BINH",
   "stats": {
@@ -12840,7 +11524,7 @@
  {
   "cccd": "036183000568",
   "fullName": "ĐINH THỊ NHUẦN",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-16",
   "rank": "TÂN BINH",
   "stats": {
@@ -12854,7 +11538,7 @@
  {
   "cccd": "040201023811",
   "fullName": "NGUYỄN DUY SƠN",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-16",
   "rank": "TÂN BINH",
   "stats": {
@@ -12868,7 +11552,7 @@
  {
   "cccd": "040095021702",
   "fullName": "NGUYỄN VĂN HOÀNG",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-18",
   "rank": "TÂN BINH",
   "stats": {
@@ -12892,34 +11576,6 @@
    "hours": ""
   },
   "khoi": "kd"
- },
- {
-  "cccd": "015099006501",
-  "fullName": "HỒ MẠNH LINH",
-  "title": "NHÂN VIÊN",
-  "joinDate": "2026-05-18",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "030199008808",
-  "fullName": "NGUYỄN THỊ KIM NGỌC",
-  "title": "NHÂN VIÊN",
-  "joinDate": "2026-05-18",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
  },
  {
   "cccd": "015300007353",
@@ -12952,7 +11608,7 @@
  {
   "cccd": "001088030339",
   "fullName": "NGUYỄN TRỌNG HỢP",
-  "title": "NHÂN VIÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-18",
   "rank": "TÂN BINH",
   "stats": {
@@ -13034,34 +11690,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "040195000042",
-  "fullName": "LÊ THỊ TÚ UYÊN",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "037187016082",
-  "fullName": "PHẠM THỊ TUYẾT",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "227194000003",
   "fullName": "TRẦN VIỆT NGA",
   "title": "NHÂN VIÊN",
@@ -13074,34 +11702,6 @@
    "hours": ""
   },
   "khoi": "bo"
- },
- {
-  "cccd": "001096018649",
-  "fullName": "NGUYỄN TRỌNG CHUNG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "030193004100",
-  "fullName": "LƯƠNG THỊ HOA",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-20",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
  },
  {
   "cccd": "001206028696",
@@ -13129,7 +11729,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001089039305",
@@ -13143,7 +11743,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "030086016399",
@@ -13300,7 +11900,7 @@
   "khoi": "kd"
  },
  {
-  "cccd": "056093300350",
+  "cccd": "056093003504",
   "fullName": "NGUYỄN NHẬT TRỊ",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-25",
@@ -13328,8 +11928,50 @@
   "khoi": "kd"
  },
  {
-  "cccd": "001098014761",
-  "fullName": "LÊ TRUNG ĐỨC",
+  "cccd": "083202001034",
+  "fullName": "ĐỖ KHÁNH TOÀN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-05-18",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079192012709",
+  "fullName": "HUỲNH THỊ LA ĐA",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-05-18",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "026199003686",
+  "fullName": "NGÔ THỊ PHƯƠNG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-05-26",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "052301004517",
+  "fullName": "TRƯƠNG LÊ HOÀNG NHI",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-25",
   "rank": "TÂN BINH",
@@ -13342,38 +11984,10 @@
   "khoi": "kd"
  },
  {
-  "cccd": "123456789102",
-  "fullName": "NGUYỄN VĂN A",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2026-05-27",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
-  "cccd": "123456789101",
-  "fullName": "NGUYỄN VĂN A",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2026-05-27",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "bo"
- },
- {
-  "cccd": "097682547290",
-  "fullName": "NGUYỄN B",
+  "cccd": "091302016387",
+  "fullName": "CÁI MAI ANH",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-28",
+  "joinDate": "2026-05-25",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -13384,10 +11998,24 @@
   "khoi": "kd"
  },
  {
-  "cccd": "666666666666",
-  "fullName": "NGUYỄN A",
-  "title": "CHUYÊN VIÊN",
-  "joinDate": "2026-05-28",
+  "cccd": "008188000795",
+  "fullName": "TRẦN THỊ MINH HUỆ",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-05-25",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "001087036942",
+  "fullName": "NGUYỄN THANH TUẤN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-05-26",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -13524,20 +12152,6 @@
   "khoi": "kd"
  },
  {
-  "cccd": "031187014117",
-  "fullName": "NGUYỄN THỊ HƯƠNG GIANG",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-27",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
   "cccd": "040203015987",
   "fullName": "NGUYỄN HỮU KHÔI",
   "title": "CHUYÊN VIÊN KINH DOANH",
@@ -13584,20 +12198,6 @@
   "fullName": "NGUYỄN Ý THIÊN KIM",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-05-26",
-  "rank": "TÂN BINH",
-  "stats": {
-   "calls": "5.000+",
-   "meetings": "500+",
-   "deals": "50+",
-   "hours": ""
-  },
-  "khoi": "kd"
- },
- {
-  "cccd": "044092014098",
-  "fullName": "VÕ ĐỨC MẠNH",
-  "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-05-27",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -14753,7 +13353,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "079185036979",
@@ -15243,13 +13843,349 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "001184038441",
   "fullName": "VŨ THU DUNG",
   "title": "CHUYÊN VIÊN KINH DOANH",
   "joinDate": "2026-06-10",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "077092003229",
+  "fullName": "TRẦN CHÂU THANH",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "036095018046",
+  "fullName": "TRẦN HỒNG QUANG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "005195009101",
+  "fullName": "TẠ NGỌC TUYÊN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "033083005441",
+  "fullName": "NGUYỄN TIẾN LỰC",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "045204004722",
+  "fullName": "NGÔ HỮU LƯU",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "025095009512",
+  "fullName": "LƯƠNG MẠNH KHỞI",
+  "title": "NHÂN VIÊN",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079202000658",
+  "fullName": "HỒ MINH THÀNH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "001078013644",
+  "fullName": "ĐINH NGỌC LONG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "082197013258",
+  "fullName": "TRẦN THỊ HOÀNG NHƯ",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079197013795",
+  "fullName": "HUỲNH NHÃ ÁI",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079087028555",
+  "fullName": "NGUYỄN HOÀNG TRUNG HIẾU",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "036082012944",
+  "fullName": "PHẠM TRUNG KIÊN",
+  "title": "NHÂN VIÊN",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "001089019081",
+  "fullName": "NGUYỄN CHIẾN THẮNG",
+  "title": "GIÁM ĐỐC KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "058185002719",
+  "fullName": "HUỲNH THỊ THU HỒNG",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "060088000058",
+  "fullName": "TRƯƠNG MẠNH KHANG",
+  "title": "TRƯỞNG PHÒNG KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "034194008935",
+  "fullName": "NGUYỄN TỐ ANH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079202017574",
+  "fullName": "LÊ HOÀNG THÀNH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "062203004611",
+  "fullName": "VŨ QUANG MINH",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "079093013662",
+  "fullName": "HUỲNH NGỌC HOÀNG THIỆN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "048089008422",
+  "fullName": "PHẠM QUANG NHẬT",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-15",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "034093001604",
+  "fullName": "TRÌNH VĂN ĐẠT",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "033190014787",
+  "fullName": "PHẠM THỊ CHÀ",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-17",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "034193007950",
+  "fullName": "NGUYỄN THỊ LOAN",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-16",
+  "rank": "TÂN BINH",
+  "stats": {
+   "calls": "5.000+",
+   "meetings": "500+",
+   "deals": "50+",
+   "hours": ""
+  },
+  "khoi": "kd"
+ },
+ {
+  "cccd": "001197013791",
+  "fullName": "NGUYỄN LÊ PHƯƠNG THẢO",
+  "title": "CHUYÊN VIÊN KINH DOANH",
+  "joinDate": "2026-06-01",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",

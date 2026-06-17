@@ -12,8 +12,8 @@ export type PosterData = {
   daysText: string;
   stats: { calls: string; meetings: string; deals: string; hours: string };
   photoUrl: string | null;
-  /** Khối: "bo" → nền poster BO (nhãn 4 ô khác); còn lại → nền KD mặc định */
-  khoi?: "bo" | "kd";
+  /** Khối: "bld"/"bo" → nền poster riêng (nhãn 4 ô khác); còn lại → nền KD */
+  khoi?: "bld" | "bo" | "kd";
 };
 
 const FONT = '"SVN Cera", sans-serif';
@@ -142,8 +142,13 @@ const Poster = forwardRef<
 
   const statCenters = [709, 904, 1098, 1295];
   const statVals = [data.stats.calls, data.stats.meetings, data.stats.deals, data.stats.hours];
-  // Nền theo khối: BO dùng ảnh có 4 nhãn riêng; mặc định KD.
-  const bgUrl = data.khoi === "bo" ? "/poster-bg-bo.png" : "/poster-bg.png";
+  // Nền theo khối: BLĐ/BO dùng ảnh có 4 nhãn riêng; mặc định KD.
+  const bgUrl =
+    data.khoi === "bld"
+      ? "/poster-bg-bld.png"
+      : data.khoi === "bo"
+        ? "/poster-bg-bo.png"
+        : "/poster-bg.png";
 
   return (
     <div className="poster-scale" ref={shellRef}>

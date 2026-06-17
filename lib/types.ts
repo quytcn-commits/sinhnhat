@@ -18,6 +18,6 @@ export type Employee = {
   };
   /** Ghi đè số ngày đồng hành. Nếu bỏ trống → tự tính từ joinDate */
   days?: number;
-  /** Khối nhân viên: "bo" → poster nền BO (nhãn khác); còn lại → poster KD */
-  khoi?: "bo" | "kd";
+  /** Khối nhân viên: "bld" / "bo" → poster nền riêng (nhãn khác); còn lại → KD */
+  khoi?: "bld" | "bo" | "kd";
 };

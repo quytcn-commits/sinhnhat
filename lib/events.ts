@@ -14,7 +14,7 @@ export type EventRec = {
   t: string; // ISO time (UTC)
   cccd: string;
   name: string;
-  khoi: "bo" | "kd" | "";
+  khoi: "bld" | "bo" | "kd" | "";
   action: EventAction;
   outcome: string; // click | shared | cancelled | downloaded | shown | error
   os: string;
