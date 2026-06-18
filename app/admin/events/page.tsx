@@ -35,7 +35,6 @@ const OUTCOME_LABEL: Record<string, string> = {
   shared: "đã chia sẻ",
   cancelled: "huỷ",
   downloaded: "đã tải",
-  server: "tải qua server",
   shown: "mở ảnh để lưu",
   error: "lỗi",
 };
