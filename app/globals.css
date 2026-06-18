@@ -648,7 +648,7 @@ input[type="text"]:focus { border-color: #1f9b46; }
 }
 .save-modal-hint {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
   max-width: 340px;
@@ -656,6 +656,12 @@ input[type="text"]:focus { border-color: #1f9b46; }
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+}
+.save-modal-sub {
+  margin-top: 4px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #b9f3c9;
 }
 .save-modal-inner img {
   max-width: 100%;

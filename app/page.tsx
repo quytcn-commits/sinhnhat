@@ -360,24 +360,12 @@ export default function Home() {
     setError(null);
   }
 
-  // Banner hiện NGAY TỪ ĐẦU cho iOS mở trong Zalo/FB — nơi tải ảnh khó nhất.
-  const openBrowserBar =
-    iosInApp && !barClosed ? (
-      <div className="open-browser-bar">
-        <span>
-          💡 Để lưu ảnh dễ nhất, hãy mở bằng <b>Safari</b>: bấm <b>“⋯”</b> góc trên
-          → <b>“Mở bằng trình duyệt”</b>
-        </span>
-        <button
-          type="button"
-          className="open-browser-close"
-          aria-label="Đóng"
-          onClick={() => setBarClosed(true)}
-        >
-          ×
-        </button>
-      </div>
-    ) : null;
+  // (Đã bỏ banner "mở bằng Safari" gây hiểu nhầm — trong Zalo iOS chỉ cần nhấn
+  // giữ ảnh là lưu được, không cần Safari. Hướng dẫn nằm ở lớp lưu ảnh.)
+  const openBrowserBar = null;
+  void iosInApp;
+  void barClosed;
+  void setBarClosed;
 
   if (!info) {
     return (
@@ -622,13 +610,14 @@ export default function Home() {
         <div className="save-modal" onClick={() => setSavedImageUrl(null)}>
           <div className="save-modal-inner" onClick={(e) => e.stopPropagation()}>
             <div className="save-modal-hint">
-              Nhấn giữ vào ảnh → chọn <b>“Chia sẻ ảnh”</b> / <b>“Lưu ảnh”</b>
+              👇 <b>Nhấn GIỮ</b> vào ảnh bên dưới → chọn <b>“Lưu vào Ảnh”</b>
+              <div className="save-modal-sub">Lưu thẳng vào máy, không cần mở Safari</div>
             </div>
             <img src={savedImageUrl} alt="Poster NewWay Realty" />
             {inApp && (
               <div className="save-modal-note">
-                Chưa được? Bấm <b>“⋯”</b> góc trên → <b>“Mở bằng trình duyệt”</b>{" "}
-                (Safari / Chrome) rồi thử lại.
+                Nếu nhấn giữ không lên menu: bấm <b>“⋯”</b> góc trên →{" "}
+                <b>“Mở bằng trình duyệt”</b> rồi tải lại.
               </div>
             )}
             <button
