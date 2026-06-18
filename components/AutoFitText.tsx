@@ -63,7 +63,10 @@ export default function AutoFitText({
   };
   const span: CSSProperties = {
     fontSize: fs,
-    lineHeight: 1,
+    // Chừa headroom cho dấu nhô cao (ngã/huyền/sắc trên Ễ, Ế, Ề…). Với
+    // background-clip:text, phần glyph vượt ra ngoài hộp dòng sẽ KHÔNG được tô
+    // (mất dấu) — line-height rộng để hộp dòng phủ hết dấu.
+    lineHeight: 1.5,
     whiteSpace: "nowrap",
     fontFamily,
     fontWeight,
