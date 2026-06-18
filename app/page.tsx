@@ -125,6 +125,8 @@ export default function Home() {
   const captureRef = useRef<HTMLDivElement>(null);
   // Ảnh đã render SẴN (cache) để share TỨC THÌ trên iOS (giữ user-activation).
   const preparedRef = useRef<{ url: string; file: File; key: string } | null>(null);
+  // "Chữ ký" của bản đã chuẩn bị xong → để nút Tải/Chia sẻ chỉ SÁNG khi sẵn sàng.
+  const [preparedKey, setPreparedKey] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   // "Chữ ký" trạng thái poster — đổi khi đổi người / ảnh / vị trí-zoom.
@@ -138,7 +140,11 @@ export default function Home() {
   useEffect(() => {
     if (!photoUrl || !posterReady || !info) return;
     const key = captureKey();
-    if (preparedRef.current?.key === key) return; // đã có bản mới nhất
+    if (preparedRef.current?.key === key) {
+      setPreparedKey(key); // đã có sẵn → nút sáng ngay
+      return;
+    }
+    setPreparedKey(null); // trạng thái mới (đổi người/ảnh/kéo) → nút TẠM MỜ, chờ render
     let cancelled = false;
     const t = setTimeout(async () => {
       try {
@@ -151,8 +157,9 @@ export default function Home() {
           key,
         };
       } catch {
-        /* để luồng chậm tự render khi bấm */
+        /* lỗi → vẫn cho bấm (luồng chậm tự render) */
       }
+      if (!cancelled) setPreparedKey(key); // xong (hoặc lỗi) → nút SÁNG
     }, 400);
     return () => {
       cancelled = true;
@@ -352,6 +359,11 @@ export default function Home() {
 
   const download = () => saveImage(false);
   const share = () => saveImage(true);
+
+  // Nút Tải/Chia sẻ chỉ SÁNG khi ảnh đã render sẵn KHỚP trạng thái hiện tại →
+  // bấm là chắc chắn được (giữ user-activation cho share iOS). Kéo-chỉnh ảnh xong
+  // nút mờ ~0.4s rồi sáng lại.
+  const ready = !!(photoUrl && posterReady && preparedKey === captureKey());
 
   function reset() {
     setInfo(null);
@@ -557,7 +569,7 @@ export default function Home() {
                 type="button"
                 className="up-actbtn"
                 onClick={download}
-                disabled={busy || !posterReady}
+                disabled={busy || !ready}
                 aria-label="Tải xuống"
               >
                 <img src="/login/btn-download.png" alt="" />
@@ -569,7 +581,7 @@ export default function Home() {
                 type="button"
                 className="up-actbtn"
                 onClick={share}
-                disabled={busy || !posterReady}
+                disabled={busy || !ready}
                 aria-label="Chia sẻ"
               >
                 <img src="/login/btn-share.png" alt="" />
@@ -577,6 +589,10 @@ export default function Home() {
               <span>CHIA SẺ</span>
             </div>
           </div>
+        )}
+        {/* Báo "đang chuẩn bị" để user chờ nút sáng rồi mới bấm (share iOS mới chắc) */}
+        {photoUrl && !ready && !busy && (
+          <div className="up-preparing">Đang chuẩn bị ảnh… đợi nút sáng rồi bấm nhé</div>
         )}
 
       </div>
