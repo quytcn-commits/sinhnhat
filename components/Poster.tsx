@@ -179,11 +179,12 @@ const Poster = forwardRef<
           style={{ position: "absolute", ...box(692, 714, 685, 149) }}
         />
 
-        {/* Họ tên — SVN-CeraBold + gradient xanh, căn giữa, tự co nếu dài */}
+        {/* Họ tên — SVN-CeraBold + gradient xanh, căn giữa, tự co nếu dài.
+            top=733 để cụm tên+chức danh căn giữa theo chiều dọc trong khung. */}
         <AutoFitText
           text={data.fullName}
           left={712}
-          top={724}
+          top={733}
           width={645}
           height={70}
           maxWidth={640}
@@ -199,7 +200,7 @@ const Poster = forwardRef<
         <AutoFitText
           text={data.title}
           left={697}
-          top={798}
+          top={807}
           width={675}
           height={40}
           maxWidth={670}
