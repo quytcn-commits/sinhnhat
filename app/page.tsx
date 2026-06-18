@@ -234,6 +234,41 @@ export default function Home() {
     return `poster-${(info?.fullName || "newway").replace(/\s+/g, "-").toLowerCase()}.png`;
   }
 
+  // PNG dataURL -> JPEG dataURL (nhẹ ~4 lần) để upload/tải nhanh + đỡ tốn đĩa server.
+  function pngToJpeg(pngDataUrl: string, quality = 0.92): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const c = document.createElement("canvas");
+        c.width = img.naturalWidth;
+        c.height = img.naturalHeight;
+        const ctx = c.getContext("2d");
+        if (!ctx) return reject(new Error("no ctx"));
+        ctx.fillStyle = "#ffffff"; // nền trắng phòng ảnh có alpha
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.drawImage(img, 0, 0);
+        resolve(c.toDataURL("image/jpeg", quality));
+      };
+      img.onerror = () => reject(new Error("decode fail"));
+      img.src = pngDataUrl;
+    });
+  }
+
+  // Upload ảnh poster lên server, trả về id để tải qua /api/download/{id}
+  // (đường tải thẳng cho iOS in-app — xem saveImage).
+  async function uploadForDownload(pngDataUrl: string): Promise<string> {
+    const jpeg = await pngToJpeg(pngDataUrl, 0.92);
+    const res = await fetch("/api/save-image", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image: jpeg }),
+    });
+    if (!res.ok) throw new Error("upload failed");
+    const data = (await res.json()) as { id?: string };
+    if (!data.id) throw new Error("no id");
+    return data.id;
+  }
+
   // Lưu/chia sẻ ảnh poster theo cách tốt nhất cho từng nền tảng.
   // - iOS / in-app (Zalo, FB...): mở SHARE SHEET hệ thống → có "Lưu ảnh" /
   //   "Thêm vào Ảnh" / gửi Zalo (1 chạm, đáng tin nhất trên iPhone).
@@ -248,17 +283,14 @@ export default function Home() {
       const nav = navigator as Navigator & {
         canShare?: (d: ShareData) => boolean;
       };
-      // Yếu tố quyết định là iOS (vì iOS BỎ QUA <a download>), không phải in-app.
       const ios = isIOSDevice();
+      const inApp = isInAppBrowser();
       const action = preferShare ? "share" : "download";
 
-      // Share sheet hệ thống (có "Lưu ảnh"/"Thêm vào Ảnh"):
-      // - iOS: BẮT BUỘC (vì không tải trực tiếp được)
-      // - Mọi máy: khi bấm nút Chia sẻ
-      // Cổng vào là navigator.share (KHÔNG bắt buộc canShare): vài WebView (Zalo
-      // iOS) có share nhưng thiếu canShare → vẫn thử share thật, rồi rơi xuống
-      // nhấn-giữ nếu lỗi. Khi có canShare thì dùng nó tiền-kiểm tra cho chắc.
-      if ((ios || preferShare) && typeof nav.share === "function") {
+      // 1) Web Share sheet (có "Lưu ảnh"/"Thêm vào Ảnh"): dùng cho nút CHIA SẺ,
+      //    hoặc iOS Safari (ngoài in-app) — nơi share sheet lưu thẳng vào Ảnh.
+      //    Cổng vào là navigator.share (không bắt buộc canShare).
+      if ((preferShare || (ios && !inApp)) && typeof nav.share === "function") {
         const blob = await (await fetch(dataUrl)).blob();
         const file = new File([blob], name, { type: "image/png" });
         const shareData = { files: [file], title: "NewWay Realty" };
@@ -268,7 +300,6 @@ export default function Home() {
             track(action, "shared");
             return;
           } catch (e) {
-            // Người dùng Huỷ → dừng. Lỗi khác (không hỗ trợ) → rơi xuống dưới.
             if ((e as Error)?.name === "AbortError") {
               track(action, "cancelled");
               return;
@@ -277,17 +308,31 @@ export default function Home() {
         }
       }
 
-      // Không share được qua Web Share API → hiện ảnh (DATA URL) để nhấn giữ:
-      // - iOS: LUÔN cần (iOS chặn tải file thẳng).
-      // - In-app Android (Zalo/FB...) khi bấm CHIA SẺ: WebView không có Web Share
-      //   → hiện ảnh để nhấn giữ → "Chia sẻ ảnh" (thay vì âm thầm tải về).
-      if (ios || (preferShare && isInAppBrowser())) {
+      // 2) iOS in-app (Zalo/FB) + nút TẢI XUỐNG → vòng qua SERVER để tải thẳng vào
+      //    máy (giống khunghinh): iOS/Zalo chặn tải blob/data, nhưng tải được URL
+      //    HTTP thật trả về Content-Disposition: attachment. Lỗi server → rơi xuống
+      //    nhấn-giữ ở bước 3.
+      if (!preferShare && ios && inApp) {
+        try {
+          const id = await uploadForDownload(dataUrl);
+          track(action, "server");
+          const fn = posterFileName().replace(/\.png$/i, ".jpg");
+          window.location.href = `/api/download/${id}?name=${encodeURIComponent(fn)}`;
+          return;
+        } catch {
+          /* server lỗi → nhấn-giữ bên dưới */
+        }
+      }
+
+      // 3) iOS (share/server không được) hoặc nút CHIA SẺ trong in-app → hiện ảnh
+      //    để nhấn giữ → "Lưu ảnh" / "Chia sẻ ảnh".
+      if (ios || (preferShare && inApp)) {
         setSavedImageUrl(dataUrl);
         track(action, "shown");
         return;
       }
 
-      // Còn lại (Tải xuống trên Android, mọi nút desktop): <a download> → tải thẳng.
+      // 4) Android/desktop → <a download> → tải thẳng.
       const a = document.createElement("a");
       a.href = dataUrl;
       a.download = name;
