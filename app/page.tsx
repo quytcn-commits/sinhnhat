@@ -36,6 +36,8 @@ export default function Home() {
   // Tỉ lệ ảnh + vị trí/zoom do người dùng kéo-chỉnh trong khung tròn.
   const [photoRatio, setPhotoRatio] = useState(1);
   const [photoAdj, setPhotoAdj] = useState<PhotoAdjust>({ scale: 1, x: 0, y: 0 });
+  // Tăng mỗi khi đổi ảnh → dùng làm "chữ ký" nhận biết ảnh đã chuẩn bị có cũ không.
+  const [photoVer, setPhotoVer] = useState(0);
   const [busy, setBusy] = useState(false);
   // Số lớn (BigNumber) vẽ bằng canvas ASYNC — chỉ cho Tải/Chia sẻ khi đã vẽ xong
   // để không chụp phải canvas trống.
@@ -119,7 +121,45 @@ export default function Home() {
   }, [info, photoUrl, posterReady]);
 
   const posterRef = useRef<HTMLDivElement>(null);
+  // Poster ẩn off-screen ở kích thước gốc (scale 1) — nguồn để render/chụp ngầm.
+  const captureRef = useRef<HTMLDivElement>(null);
+  // Ảnh đã render SẴN (cache) để share TỨC THÌ trên iOS (giữ user-activation).
+  const preparedRef = useRef<{ url: string; file: File; key: string } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  // "Chữ ký" trạng thái poster — đổi khi đổi người / ảnh / vị trí-zoom.
+  function captureKey() {
+    return `${info?.daysText}|${info?.khoi}|${photoVer}|${photoAdj.scale}|${photoAdj.x}|${photoAdj.y}`;
+  }
+
+  // Render SẴN ảnh poster (ngầm, từ poster ẩn — không nháy) sau khi user dừng
+  // chỉnh ~400ms. Nhờ vậy khi bấm Tải/Chia sẻ trên iOS, ta gọi navigator.share
+  // NGAY (dùng File đã có) → không bị mất "user-activation" → share luôn chạy.
+  useEffect(() => {
+    if (!photoUrl || !posterReady || !info) return;
+    const key = captureKey();
+    if (preparedRef.current?.key === key) return; // đã có bản mới nhất
+    let cancelled = false;
+    const t = setTimeout(async () => {
+      try {
+        const url = await renderDataUrl();
+        const blob = await (await fetch(url)).blob();
+        if (cancelled) return;
+        preparedRef.current = {
+          url,
+          file: new File([blob], posterFileName(), { type: "image/png" }),
+          key,
+        };
+      } catch {
+        /* để luồng chậm tự render khi bấm */
+      }
+    }, 400);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [photoUrl, posterReady, info, photoAdj, photoVer]);
 
   // Ghi nhận sự kiện (tham gia/tải/chia sẻ) để quản trị theo dõi. Fire-and-forget,
   // không chặn UI; keepalive để gửi xong kể cả khi trang chuyển/đóng.
@@ -189,6 +229,7 @@ export default function Home() {
         setPhotoUrl(canvas.toDataURL("image/jpeg", 0.92));
         setPhotoRatio(w / h); // tỉ lệ ảnh để Poster tính khung + giới hạn kéo
         setPhotoAdj({ scale: 1, x: 0, y: 0 }); // ảnh mới → reset vị trí/zoom
+        setPhotoVer((v) => v + 1);
       } catch {
         setError("Ảnh không hợp lệ, hãy thử ảnh khác.");
       }
@@ -201,33 +242,17 @@ export default function Home() {
   }
 
   async function renderDataUrl(): Promise<string> {
-    const node = posterRef.current!;
-    // iOS Safari dựng SAI vị trí các phần tử absolute nếu node đang có
-    // transform: scale() (poster thu nhỏ cho vừa khung). Khắc phục: tạm đặt
-    // transform THẬT của node về scale(1) (kích thước gốc 1449×2048) ngay trên
-    // DOM trước khi chụp, rồi khôi phục. Cha .poster-scale có overflow:hidden
-    // nên không nháy ra ngoài khung.
-    const prevTransform = node.style.transform;
-    const prevOrigin = node.style.transformOrigin;
-    node.style.transform = "scale(1)";
-    node.style.transformOrigin = "top left";
-    try {
-      // Chờ font (SVN Cera, Bahnschrift) load xong → chữ không bị đo sai/lệch.
-      if (typeof document !== "undefined" && document.fonts?.ready) {
-        await document.fonts.ready;
-      }
-      // modern-screenshot: ổn định hơn html-to-image trên Safari/iOS.
-      // scale:1 để KHÔNG nhân devicePixelRatio (iOS giới hạn kích thước canvas).
-      const dataUrl = await domToPng(node, {
-        width: 1449,
-        height: 2048,
-        scale: 1,
-      });
-      return dataUrl;
-    } finally {
-      node.style.transform = prevTransform;
-      node.style.transformOrigin = prevOrigin;
+    // Chụp từ POSTER ẨN (off-screen, luôn ở kích thước gốc 1449×2048 / scale 1)
+    // → không cần đụng transform của poster đang hiển thị (không nháy), và iOS
+    // dựng đúng vị trí các phần tử absolute (vì scale = 1).
+    const node = captureRef.current ?? posterRef.current!;
+    // Chờ font (SVN Cera, Bahnschrift) load xong → chữ không bị đo sai/lệch.
+    if (typeof document !== "undefined" && document.fonts?.ready) {
+      await document.fonts.ready;
     }
+    // modern-screenshot: ổn định hơn html-to-image trên Safari/iOS.
+    // scale:1 để KHÔNG nhân devicePixelRatio (iOS giới hạn kích thước canvas).
+    return await domToPng(node, { width: 1449, height: 2048, scale: 1 });
   }
 
   function posterFileName() {
@@ -241,17 +266,45 @@ export default function Home() {
   // - Nếu không hỗ trợ share file: hiện ảnh full-màn để nhấn giữ "Lưu ảnh".
   // - Desktop: tải file trực tiếp.
   async function saveImage(preferShare: boolean) {
-    if (!posterRef.current) return;
+    if (!posterRef.current && !captureRef.current) return;
+    const nav = navigator as Navigator & {
+      canShare?: (d: ShareData) => boolean;
+    };
+    const ios = isIOSDevice();
+    const inApp = isInAppBrowser();
+    const action = preferShare ? "share" : "download";
+
+    // ⚡ FAST PATH (iOS / nút Chia sẻ): nếu đã render SẴN ảnh khớp trạng thái hiện
+    // tại → gọi navigator.share NGAY (không await render trước) → giữ được
+    // "user-activation" của cú chạm → share LUÔN chạy (hết cảnh lúc được lúc không).
+    const prepared = preparedRef.current;
+    if (
+      (ios || preferShare) &&
+      typeof nav.share === "function" &&
+      prepared &&
+      prepared.key === captureKey() &&
+      (typeof nav.canShare !== "function" || nav.canShare({ files: [prepared.file] }))
+    ) {
+      try {
+        await navigator.share({ files: [prepared.file], title: "NewWay Realty" });
+        track(action, "shared");
+        return;
+      } catch (e) {
+        if ((e as Error)?.name === "AbortError") {
+          track(action, "cancelled");
+          return;
+        }
+        // lỗi khác (không hỗ trợ) → rơi xuống luồng chậm
+      }
+    }
+
+    // 🐢 SLOW PATH: chưa có ảnh sẵn → render rồi xử lý (có thể mất activation trên
+    // iOS → rơi xuống nhấn-giữ, nhưng hiếm vì đã render sẵn ở trên).
     setBusy(true);
     try {
-      const dataUrl = await renderDataUrl();
+      const dataUrl =
+        prepared && prepared.key === captureKey() ? prepared.url : await renderDataUrl();
       const name = posterFileName();
-      const nav = navigator as Navigator & {
-        canShare?: (d: ShareData) => boolean;
-      };
-      const ios = isIOSDevice();
-      const inApp = isInAppBrowser();
-      const action = preferShare ? "share" : "download";
 
       // 1) Web Share sheet (có "Lưu ảnh"/"Thêm vào Ảnh"): cho iOS (mọi nơi, kể cả
       //    Zalo) và nút Chia sẻ. iOS KHÔNG cho web tải file thẳng vào Ảnh → Share
@@ -495,12 +548,12 @@ export default function Home() {
           {/* Cube đè lên góc phải dưới poster */}
           <img className="up-cube" src="/login/cube-up.png" alt="" />
 
-          {/* Poster preview */}
+          {/* Poster preview (hiển thị + kéo-chỉnh). Readiness/capture lấy từ poster
+              ẩn bên dưới nên không cần onNumberReady ở đây. */}
           <div className="up-poster">
             <Poster
               ref={posterRef}
               data={{ ...info, photoUrl }}
-              onNumberReady={handleNumberReady}
               photoRatio={photoRatio}
               adjust={photoAdj}
               onAdjust={setPhotoAdj}
@@ -538,6 +591,19 @@ export default function Home() {
           </div>
         )}
 
+      </div>
+
+      {/* Poster ẩn off-screen ở kích thước GỐC 1449px (scale 1): nguồn render/chụp
+          ngầm cho Tải/Chia sẻ. Đặt NGOÀI .up-stage để không dính transform scale.
+          onNumberReady ở đây quyết định posterReady (ảnh đã sẵn để chụp). */}
+      <div aria-hidden style={{ position: "fixed", left: -100000, top: 0, width: 1449, pointerEvents: "none" }}>
+        <Poster
+          ref={captureRef}
+          data={{ ...info, photoUrl }}
+          onNumberReady={handleNumberReady}
+          photoRatio={photoRatio}
+          adjust={photoAdj}
+        />
       </div>
 
       {/* Nền mobile (rays + skyline + cube) */}
