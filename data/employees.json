@@ -129,7 +129,7 @@
   "cccd": "006197002789",
   "fullName": "ĐÀM NGỌC ÁNH",
   "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-11-19",
+  "joinDate": "2023-09-06",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -143,7 +143,7 @@
   "cccd": "080194010293",
   "fullName": "NGŨ MAI KHANH",
   "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-11-05",
+  "joinDate": "2023-09-11",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -591,7 +591,7 @@
   "cccd": "015186009627",
   "fullName": "HOÀNG HÀ MY",
   "title": "CHUYÊN VIÊN",
-  "joinDate": "2025-07-16",
+  "joinDate": "2021-07-12",
   "rank": "CHIẾN BINH",
   "stats": {
    "calls": "5.000+",
@@ -605,7 +605,7 @@
   "cccd": "034084015905",
   "fullName": "LƯU TRỌNG QUANG",
   "title": "GIÁM ĐỐC",
-  "joinDate": "2024-02-26",
+  "joinDate": "2021-07-01",
   "rank": "HUYỀN THOẠI",
   "stats": {
    "calls": "5.000+",
@@ -2083,7 +2083,7 @@
    "deals": "50+",
    "hours": ""
   },
-  "khoi": "kd"
+  "khoi": "bld"
  },
  {
   "cccd": "020190007942",
@@ -2495,7 +2495,7 @@
   "cccd": "038185027759",
   "fullName": "NGUYỄN THỊ HỒNG",
   "title": "GIÁM ĐỐC KINH DOANH",
-  "joinDate": "2024-06-01",
+  "joinDate": "2023-05-18",
   "rank": "HUYỀN THOẠI",
   "stats": {
    "calls": "5.000+",
@@ -9943,7 +9943,7 @@
   "cccd": "001080048172",
   "fullName": "TRỊNH DUY HIỆP",
   "title": "GIÁM ĐỐC KINH DOANH",
-  "joinDate": "2026-04-01",
+  "joinDate": "2022-09-12",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -10797,7 +10797,7 @@
   "cccd": "014196000052",
   "fullName": "ĐỒNG DIỆP ANH",
   "title": "GIÁM ĐỐC KINH DOANH",
-  "joinDate": "2026-05-06",
+  "joinDate": "2023-10-02",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
@@ -10811,7 +10811,7 @@
   "cccd": "004087008718",
   "fullName": "HOÀNG QUANG",
   "title": "CHUYÊN VIÊN KINH DOANH",
-  "joinDate": "2026-04-01",
+  "joinDate": "2023-09-23",
   "rank": "TÂN BINH",
   "stats": {
    "calls": "5.000+",
